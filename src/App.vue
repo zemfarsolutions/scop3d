@@ -11,7 +11,7 @@ import Footer from './components/Footer.vue'
         <div class="container">
           <div class="hmd-inner">
             <div class="hmd-logo">
-              <RouterLink to="/"><img src="assets/images/Whie-Logo-scop3d.png" alt="Scop3D AI logo"
+              <RouterLink to="/"><img src="/assets/images/Whie-Logo-scop3d.png" alt="Scop3D AI logo"
                         style="width: 70%;"> </RouterLink>
             </div>
             <div class="hmd-navflx">
@@ -25,7 +25,7 @@ import Footer from './components/Footer.vue'
                 </div>
                 <div class="upgrade-subtn">
                     <a class="upgd-go" href="#">
-                        <img class="strlight" src="assets/images/light.svg" loading="lazy"
+                        <img class="strlight" src="/assets/images/light.svg" loading="lazy"
                             alt="button light version upgrade homedesigns">
                         Start Now
                     </a>

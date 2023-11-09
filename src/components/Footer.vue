@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="bussiness-outer">
                     <div class="competitive-inner">
-                        <div class="competitive-inner-left"> <img src="assets/images/bussiness-img.png"
+                        <div class="competitive-inner-left"> <img src="/assets/images/bussiness-img.png"
                                 alt="real estate ai"> </div>
                         <div class="competitive-inner-right">
                             <h2 class="title-outer">Grow & Scale<br>
@@ -29,7 +29,7 @@
                                     <ul class="contact-list">
                                         <li>
                                             <a href="#">
-                                                <img src="assets/images/Whie-Logo-scop3d.png" loading="lazy"
+                                                <img src="/assets/images/Whie-Logo-scop3d.png" loading="lazy"
                                                     alt="Scop3D AI logo footer">
                                             </a>
                                         </li>
@@ -47,37 +47,37 @@
                                     <ul class="social-list">
                                         <li>
                                             <a href="https://www.facebook.com">
-                                                <img src="assets/images/facebook.png" width="15px" loading="lazy"
+                                                <img src="/assets/images/facebook.png" width="15px" loading="lazy"
                                                     alt="facebook Scop3D AI">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://www.twitter.com/">
-                                                <img src="assets/images/twitter.png" width="15px" loading="lazy"
+                                                <img src="/assets/images/twitter.png" width="15px" loading="lazy"
                                                     alt="twitter homedesigns ai">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://www.youtube.com/">
-                                                <img src="assets/images/youtube.png" width="15px" loading="lazy"
+                                                <img src="/assets/images/youtube.png" width="15px" loading="lazy"
                                                     alt="youtube homedesigns ai">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://www.tiktok.com/">
-                                                <img src="assets/images/tiktok.png" width="15px" loading="lazy"
+                                                <img src="/assets/images/tiktok.png" width="15px" loading="lazy"
                                                     alt="tiktok homedesigns ai">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://www.instagram.com/">
-                                                <img src="assets/images/instagram.png" width="15px" loading="lazy"
+                                                <img src="/assets/images/instagram.png" width="15px" loading="lazy"
                                                     alt="Scop3D AI instagram">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://pinterest.com/">
-                                                <img src="assets/images/pinterest.png" width="15px" loading="lazy"
+                                                <img src="/assets/images/pinterest.png" width="15px" loading="lazy"
                                                     alt="Scop3D AI pinterest">
                                             </a>
                                         </li>
@@ -95,5 +95,4 @@
         </div>
     </footer>
 </template>
-<script></script>
 

@@ -1,5 +1,3 @@
-<script></script>
-
 <template>
     <section class="banner-outer">
         <div class="container">
@@ -12,7 +10,7 @@
                     <a href="#">Landscaping AI</a>
                 </p>
                 <div class="banner-img"> 
-                    <img src="assets/images/banner-img-estate.png" alt="Close more real estate deals using artificial intelligence">
+                    <img src="/assets/images/banner-img-estate.png" alt="Close more real estate deals using artificial intelligence">
                 </div>
             </div>
         </div>
@@ -22,7 +20,7 @@
             <div class="competitive-inner reverse-con">
                 <div class="competitive-inner-left">
                     <div class="video-inner">
-                        <img src="assets/images/banner-img-estate1.png" alt="">
+                        <img src="/assets/images/banner-img-estate1.png" alt="">
                     </div>
                 </div>
                 <div class="competitive-inner-right">
@@ -49,16 +47,16 @@
         </div>
         <div class="elevation-slider">
             <div class="custom1 owl-carousel owl-theme">
-                <div class="item"> <img src="assets/images/slider-img01.png" alt="generate house exteriors with AI in 30 seconds"> </div>
-                <div class="item"> <img src="assets/images/slider-img02.png" alt="use ai to redesign gardens and backyard fast and easy with ai"> </div>
-                <div class="item"> <img src="assets/images/slider-img03.png" alt="generate interiors with ai in a blink of an eye with home designs ai"> </div>
-                <div class="item"> <img src="assets/images/slider-img04.png" alt="redecorate with the power of ai using homedesigns ai"> </div>
-                <div class="item"> <img src="assets/images/slider-img05.png" alt="interior ai and exterior ai to redesign any part of a home quickly"> </div>
-                <div class="item"> <img src="assets/images/slider-img01.png" alt="generate house exteriors with AI in 30 seconds"> </div>
-                <div class="item"> <img src="assets/images/slider-img02.png" alt="use ai to redesign gardens and backyard fast and easy with ai"> </div>
-                <div class="item"> <img src="assets/images/slider-img03.png" alt="generate interiors with ai in a blink of an eye with home designs ai"> </div>
-                <div class="item"> <img src="assets/images/slider-img04.png" alt="redecorate with the power of ai using homedesigns ai"> </div>
-                <div class="item"> <img src="assets/images/slider-img05.png" alt="interior ai and exterior ai to redesign any part of a home quickly"> </div>
+                <div class="item"> <img src="/assets/images/slider-img01.png" alt="generate house exteriors with AI in 30 seconds"> </div>
+                <div class="item"> <img src="/assets/images/slider-img02.png" alt="use ai to redesign gardens and backyard fast and easy with ai"> </div>
+                <div class="item"> <img src="/assets/images/slider-img03.png" alt="generate interiors with ai in a blink of an eye with home designs ai"> </div>
+                <div class="item"> <img src="/assets/images/slider-img04.png" alt="redecorate with the power of ai using homedesigns ai"> </div>
+                <div class="item"> <img src="/assets/images/slider-img05.png" alt="interior ai and exterior ai to redesign any part of a home quickly"> </div>
+                <div class="item"> <img src="/assets/images/slider-img01.png" alt="generate house exteriors with AI in 30 seconds"> </div>
+                <div class="item"> <img src="/assets/images/slider-img02.png" alt="use ai to redesign gardens and backyard fast and easy with ai"> </div>
+                <div class="item"> <img src="/assets/images/slider-img03.png" alt="generate interiors with ai in a blink of an eye with home designs ai"> </div>
+                <div class="item"> <img src="/assets/images/slider-img04.png" alt="redecorate with the power of ai using homedesigns ai"> </div>
+                <div class="item"> <img src="/assets/images/slider-img05.png" alt="interior ai and exterior ai to redesign any part of a home quickly"> </div>
             </div>
         </div>
     </section>
@@ -67,7 +65,7 @@
             <div class="competitive-inner">
                 <div class="competitive-inner-left">
                     <div class="video-inner">
-                        <img src="assets/images/real-estate-ai-before-after.png" alt="real estate virtual staging before and after with ai">
+                        <img src="/assets/images/real-estate-ai-before-after.png" alt="real estate virtual staging before and after with ai">
                     </div>
                 </div>
                 <div class="competitive-inner-right">
@@ -84,7 +82,7 @@
             <h2 class="title-outer" style="color:#fff;">Show the Potential of Every Property</h2>
             <h3 class="sub-title">From Outdated to Outstanding with a Click</h3>
             <p style="color:#fff; opacity: 0.7;">Don't let outdated interiors put off potential buyers. With HomeDesigns AI, transform any space into a modern, appealing<br> haven. Show buyers the true potential of every property, enhancing its value and appeal.</p>
-            <img src="assets/images/banner-img-estate2.png" alt="">
+            <img src="/assets/images/banner-img-estate2.png" alt="">
         </div>
     </section>
     <section class="streamline-outer">
@@ -92,7 +90,7 @@
             <div class="competitive-inner">
                 <div class="competitive-inner-left">
                     <div class="video-inner video-inner2">
-                        <img src="assets/images/banner-img-estate3.png" alt="">
+                        <img src="/assets/images/banner-img-estate3.png" alt="">
                     </div>
                 </div>
                 <div class="competitive-inner-right">
@@ -110,27 +108,27 @@
             <p>Join the growing number of real estate professionals leveraging the power of AI to sell properties faster and at higher prices. Try HomeDesigns AI today and see the difference it can make to your business. </p>
             <ul class="designs">
                 <li>
-                    <div class="design-icon"> <img src="assets/images/design-icon01.svg" alt=""> </div>
+                    <div class="design-icon"> <img src="/assets/images/design-icon01.svg" alt=""> </div>
                     <h2>502998+ <br>
                         <span>Designs </span>
                     </h2>
                     <p>Our members are generating thousands of ideas every day with Artificial Intelligence. </p>
                 </li>
                 <li>
-                    <div class="design-icon"> <img src="assets/images/design-icon02.svg" alt=""> </div>
+                    <div class="design-icon"> <img src="/assets/images/design-icon02.svg" alt=""> </div>
                     <h2>6807+ <span>PRO <br>
                             Members </span> </h2>
                     <p>Thousands of private users and companies are saving money & time. </p>
                 </li>
                 <li>
-                    <div class="design-icon"> <img src="assets/images/design-icon03.svg" alt=""> </div>
+                    <div class="design-icon"> <img src="/assets/images/design-icon03.svg" alt=""> </div>
                     <h2>502998+ <span>Design<br>
                             Styles </span> </h2>
                     <p>New styles added every month. You can request any custom design style. </p>
                 </li>
                 <li>
-                    <div class="design-icon"> <img src="assets/images/design-icon04.svg" alt=""> </div>
-                    <h2><img src="assets/images/stars.png" alt="">5 <br>
+                    <div class="design-icon"> <img src="/assets/images/design-icon04.svg" alt=""> </div>
+                    <h2><img src="/assets/images/stars.png" alt="">5 <br>
                         <span>Star Rating </span>
                     </h2>
                     <p>Scop3D AI has a 5 star rating from our members that use it everyday. </p>
@@ -240,8 +238,8 @@
             <div class="competitive-inner reverse-con">
                 <div class="competitive-inner-left">
                     <video loop muted autoplay playsinline width="100%">
-                        <source src="assets/images/headvid.webm" type="video/webm">
-                        <source src="assets/images/headvid.mp4" type="video/mp4">
+                        <source src="/assets/images/headvid.webm" type="video/webm">
+                        <source src="/assets/images/headvid.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="competitive-inner-right">
@@ -292,7 +290,7 @@
                 </form>
                 <a
                     href="https://accounts.google.com/o/oauth2/auth?client_id=853250127618-q7j2jgndclhle26cnn968adcjpjkevgc.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fhomedesigns.ai%2Fauthorized%2Fgoogle%2Fcallback&amp;scope=openid+profile+email&amp;response_type=code&amp;state=nuktXMAIJ38gTapcFPQDhnCAGjPzCK51V9o4deFr">
-                    <img class="signingoogle" src="assets/images/download.png" style="margin-top: 10px;"
+                    <img class="signingoogle" src="/assets/images/download.png" style="margin-top: 10px;"
                         alt="gmail login Scop3D AI">
                 </a>
                 <br>
@@ -319,7 +317,7 @@
                 <a href="premium-upgrade.html"><button class="modal_footer_button">Learn More About
                         Premium</button></a>
             </div>
-            <img src="assets/images/permium_feture_icon.png" class="mt-3" alt="sam">
+            <img src="/assets/images/permium_feture_icon.png" class="mt-3" alt="sam">
         </div>
     </div>
 </div>

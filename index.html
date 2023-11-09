@@ -1,97 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <link rel="icon" href="//assets/images/favicon.ico" />
 
     <title>SCOP3D: Real Estate Photography and 3D Virtual Tours</title>
-    
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/Eudoxus-Sans.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="assets/css/main-style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/googleapisFonts.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
 
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/Eudoxus-Sans.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="/assets/css/main-style.css" rel="stylesheet" />
+    <link href="/assets/css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/css/googleapisFonts.css" />
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/jquery-ui.css" />
   </head>
   <body>
     <div id="app"></div>
-    
-    <script type="module" src="/src/main.ts"></script>
-    
-    <script src="assets/js/owl.carousel.js" type="fc83d25c74d8c30f99980e60-text/javascript"></script>
-    <script type="fc83d25c74d8c30f99980e60-text/javascript">
-        $(document).ready(function() {
-            $('.custom1').owlCarousel({
-                loop: true,
-                margin: 10,
-                autoplay: true,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: false
-                    },
-                    600: {
-                        items: 3,
-                        nav: false
-                    },
-                    1000: {
-                        items: 5,
-                        nav: true,
-                        loop: false,
-                        margin: 20
-                    }
-                }
-            })
-        })
 
-        $(document).ready(function() {
-            $('.custom2').owlCarousel({
-                loop: true,
-                margin: 10,
-                autoplay: true,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: false
-                    },
-                    600: {
-                        items: 2,
-                        nav: false
-                    },
-                    1000: {
-                        items: 3,
-                        nav: true,
-                        loop: false,
-                        margin: 20
-                    }
-                }
-            })
-        })
+    <script type="module" src="/src/main.ts"></script>
+
+    <script
+      src="/assets/js/owl.carousel.js"
+      type="fc83d25c74d8c30f99980e60-text/javascript"
+    ></script>
+    <script type="fc83d25c74d8c30f99980e60-text/javascript">
+      $(document).ready(function() {
+          $('.custom1').owlCarousel({
+              loop: true,
+              margin: 10,
+              autoplay: true,
+              responsiveClass: true,
+              responsive: {
+                  0: {
+                      items: 1,
+                      nav: false
+                  },
+                  600: {
+                      items: 3,
+                      nav: false
+                  },
+                  1000: {
+                      items: 5,
+                      nav: true,
+                      loop: false,
+                      margin: 20
+                  }
+              }
+          })
+      })
+
+      $(document).ready(function() {
+          $('.custom2').owlCarousel({
+              loop: true,
+              margin: 10,
+              autoplay: true,
+              responsiveClass: true,
+              responsive: {
+                  0: {
+                      items: 1,
+                      nav: false
+                  },
+                  600: {
+                      items: 2,
+                      nav: false
+                  },
+                  1000: {
+                      items: 3,
+                      nav: true,
+                      loop: false,
+                      margin: 20
+                  }
+              }
+          })
+      })
     </script>
     <script type="fc83d25c74d8c30f99980e60-text/javascript">
-        $(".only-mobile").click(function() {
-            $(".sidenav").addClass("open-menu");
-        });
+      $(".only-mobile").click(function() {
+          $(".sidenav").addClass("open-menu");
+      });
 
-        $(".closebtn").click(function() {
-            $(".sidenav").removeClass("open-menu");
-        });
+      $(".closebtn").click(function() {
+          $(".sidenav").removeClass("open-menu");
+      });
     </script>
   </body>
 </html>
