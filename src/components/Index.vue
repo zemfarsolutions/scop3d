@@ -17,7 +17,7 @@
             </div>
         </div>
     </section>
-    <section class="competitive-outer">
+    <section id="about-us" class="competitive-outer">
         <div class="container">
             <div class="competitive-inner reverse-con">
                 <div class="competitive-inner-left">
@@ -79,7 +79,7 @@
             </div>
         </div>
     </section>
-    <section class="potential-outer">
+    <section id="our-work" class="potential-outer">
         <div class="container">
             <h2 class="title-outer" style="color:#fff;">Show the Potential of Every Property</h2>
             <h3 class="sub-title">From Outdated to Outstanding with a Click</h3>
@@ -138,7 +138,7 @@
             </ul>
         </div>
     </section>
-    <section class="agent-outer">
+    <section id="join-us" class="agent-outer">
         <div class="container">
             <h2 class="title-outer" style="color:#fff;">Hear from Successful Real Estate Agents</h2>
             <h3 class="sub-title">Success Stories from Our Users</h3>
@@ -224,6 +224,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="container" style="width: 30%;">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="" id="" placeholder="Enter your email address">
+                    </div>
+                    <button class="btn btn-primary mt-2 btn-sm">Suscribe Us</button>
+                </form>
             </div>
         </div>
     </section>

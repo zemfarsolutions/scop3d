@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer id="footer">
         <div class="ft-outer">
             <div class="container">
                 <div class="bussiness-outer">
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="ft-btm">
-                        <p>Copyright 2023 Scop3D AI. all rights reserved</p>
+                        <p>Copyright 2023 Zemfar Solutions. all rights reserved</p>
                     </div>
                 </div>
                 <span class="big-ai">AI</span>

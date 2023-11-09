@@ -11,14 +11,16 @@ import Footer from './components/Footer.vue'
         <div class="container">
           <div class="hmd-inner">
             <div class="hmd-logo">
-                <a href="index.html"> <img src="assets/images/Whie-Logo-scop3d.png" alt="Scop3D AI logo"
-                        style="width: 70%;"> </a>
+              <RouterLink to="/"><img src="assets/images/Whie-Logo-scop3d.png" alt="Scop3D AI logo"
+                        style="width: 70%;"> </RouterLink>
             </div>
             <div class="hmd-navflx">
                 <div class="hmd-nav">
                     <ul>
-                        <li class="hmd-navlist"><a href="#">Features</a></li>
-                        <li class="hmd-navlist"><a href="#">API</a></li>
+                        <li class="hmd-navlist"><a href="#about-us">About Us</a></li>
+                        <li class="hmd-navlist"><a href="#our-work">Our Work</a></li>
+                        <li class="hmd-navlist"><a href="#join-us">Join Us</a></li>
+                        <li class="hmd-navlist"><a href="#footer">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="upgrade-subtn">
@@ -58,7 +60,6 @@ import Footer from './components/Footer.vue'
     <Index />
     <Footer />
   </main>
-        <!-- <RouterLink to="/">Home</RouterLink> -->
     
   <RouterView />
 </template>
