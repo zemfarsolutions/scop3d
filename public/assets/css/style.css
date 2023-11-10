@@ -95,10 +95,10 @@ body {
 
 .api_title_cards span {
    font-size: 25px;
-   border: 1px solid #7558ea;
+   border: 1px solid #077A76;
    border-radius: 50px;
    padding: 8px 16px;
-   color: #7558ea
+   color: #077A76
 }
 
 .api_banner_btns a.gt-stbtn {
@@ -175,7 +175,7 @@ body {
 }
 
 .switch-api-tabs button:hover {
-   background-color: #7558ea;
+   background-color: #077A76;
    color: #fff
 }
 
@@ -199,7 +199,7 @@ body {
 }
 
 .api-endpoints-subtittle {
-   color: #7558ea
+   color: #077A76
 }
 
 .redesign-endpoint-list-points li strong {
@@ -220,7 +220,7 @@ body {
 }
 
 :root {
-   --main-color: #7558ea
+   --main-color: #077A76
 }
 
 .mn-homeouter .container, .hmd-outer .container {
@@ -245,7 +245,7 @@ body {
 
 * {
    scrollbar-width: auto;
-   scrollbar-color: #7558ea #7558ea
+   scrollbar-color: #077A76 #077A76
 }
 
 *::-webkit-scrollbar {
@@ -257,9 +257,9 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-   background-color: #7558ea;
+   background-color: #077A76;
    border-radius: 10px;
-   border: 3px solid #7558ea
+   border: 3px solid #077A76
 }
 
 .scorll-auto {
@@ -335,7 +335,7 @@ body {
 #extrasettings {}
 
 .fa {
-   background-color: #7558ea;
+   background-color: #077A76;
    padding-inline: 8px;
    padding-block: 5px;
    border-radius: 10px;
@@ -375,17 +375,18 @@ body {
 }
 
 .upgd-go {
-   padding: 10px 27px;
+   padding: 15px 45px;
    display: inline-block;
-   border: 1px solid #7558ea;
+   border: 1px solid #077A76;
    border-radius: 5px;
    font-weight: 700;
-   font-size: 16px;
+   font-size: 18px;
    line-height: 28px;
    color: var(--main-color);
    background: #fff;
-   transition: ease .2s
-}
+   transition: ease .2s;
+   text-transform: uppercase;
+ }
 
 .hmd-navflx {
    display: flex;
@@ -865,9 +866,9 @@ p.mn-hm-content {
 }
 
 .gt-stbtn:hover {
-   color: #7558ea;
+   color: #077A76;
    background-color: #fff;
-   border: 1px solid #7558ea;
+   border: 1px solid #077A76;
    transition: .3s
 }
 
@@ -1341,7 +1342,7 @@ onbx .hmd-italic {
    font-size: 20px;
    text-transform: capitalize;
    color: #fff;
-   background: #7558ea;
+   background: #077A76;
    border-radius: 12px;
    padding: 18px 65px;
    display: inline-block;
@@ -1733,7 +1734,7 @@ onbx .hmd-italic {
    text-align: center;
    letter-spacing: .2em;
    text-transform: uppercase;
-   color: #7558ea;
+   color: #077A76;
    display: inline-block
 }
 
@@ -1741,7 +1742,7 @@ onbx .hmd-italic {
    font-style: normal;
    font-weight: 800;
    font-size: 41px;
-   color: #7558ea;
+   color: #077A76;
    margin-bottom: 0
 }
 
@@ -1893,7 +1894,7 @@ onbx .hmd-italic {
    font-size: 61px;
    line-height: 133%;
    text-transform: capitalize;
-   color: #7558ea;
+   color: #077A76;
    display: inline-block;
    margin-left: 9px
 }
@@ -1914,7 +1915,7 @@ onbx .hmd-italic {
    font-weight: 500;
    font-size: 13px;
    line-height: 16px;
-   color: #7558ea;
+   color: #077A76;
    padding: 7px 15px;
    background: #f1eeff;
    border: 1px solid rgba(117, 88, 234, .53);
@@ -2023,7 +2024,7 @@ onbx .hmd-italic {
    font-weight: 400;
    font-size: 22px;
    line-height: 114%;
-   color: #7558ea
+   color: #077A76
 }
 
 .feautures-inner {
@@ -2435,7 +2436,7 @@ onbx .hmd-italic {
    color: #fff;
    display: inline-block;
    padding: 5px 25px;
-   background: #7558ea;
+   background: #077A76;
    border-radius: 60px;
    transition: .4s ease
 }
@@ -2443,7 +2444,7 @@ onbx .hmd-italic {
 .pricing-cardprice {
    font-weight: 700;
    font-size: 24px;
-   color: #7558ea;
+   color: #077A76;
    margin-bottom: 0;
    margin-top: 16px;
    transition: .4s ease
@@ -2562,7 +2563,7 @@ onbx .hmd-italic {
    font-size: 16px;
    text-transform: capitalize;
    color: #fff;
-   background: #7558ea;
+   background: #077A76;
    border: 1px solid #fff;
    border-radius: 5px;
    padding: 13px 45px;
@@ -2572,7 +2573,7 @@ onbx .hmd-italic {
 
 .ft-floating-btn:hover {
    background: #5b41c3;
-   border: 1px solid #7558ea
+   border: 1px solid #077A76
 }
 
 .floating-bannerinr {
@@ -2829,9 +2830,9 @@ onbx .hmd-italic {
 }
 
 .prv-pricecard.pro .card-submit {
-   border: 1px solid #7558ea;
+   border: 1px solid #077A76;
    color: #fff;
-   background: #7558ea;
+   background: #077A76;
    transition: .4s ease;
    font-size: 20px
 }
@@ -2874,7 +2875,7 @@ onbx .hmd-italic {
 }
 
 .prv-pricecard.pro .prv-cardbenefits ul li::before {
-   background-color: #7558ea
+   background-color: #077A76
 }
 
 .prv-pricecard.team .prv-cardbenefits ul li::before {
@@ -2905,15 +2906,15 @@ onbx .hmd-italic {
 }
 
 .prv-pricecard.pro .card-submit:hover {
-   border-color: #7558ea;
+   border-color: #077A76;
    color: #fff;
    background: #fff;
    transition: .4s ease;
-   color: #7558ea
+   color: #077A76
 }
 
 .prv-pricecard.pro:hover {
-   border-color: #7558ea;
+   border-color: #077A76;
    transition: .4s ease
 }
 
@@ -2931,7 +2932,7 @@ onbx .hmd-italic {
 }
 
 .stYle-selectinner .nav-pills .nav-link.active .stYle-heading {
-   color: #7558ea;
+   color: #077A76;
    opacity: 1
 }
 
@@ -2950,7 +2951,7 @@ onbx .hmd-italic {
 }
 
 .stYle-selectinner .nav-pills .nav-link.active .tabimg {
-   border-color: #7558ea;
+   border-color: #077A76;
    opacity: 1;
    background-color: transparent
 }
@@ -3116,7 +3117,7 @@ onbx .hmd-italic {
 }
 
 .nw-formouter .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-   background-color: #7558ea !important
+   background-color: #077A76 !important
 }
 
 .nw-formouter .nav-item {
@@ -3377,7 +3378,7 @@ onbx .hmd-italic {
    left: 0;
    width: 21px;
    height: 21px;
-   background: #7558ea;
+   background: #077A76;
    border-radius: 90px;
    transition: .3s
 }
@@ -3411,7 +3412,7 @@ onbx .hmd-italic {
    left: 0;
    width: 21px;
    height: 21px;
-   background: #7558ea;
+   background: #077A76;
    border-radius: 90px;
    transition: .3s
 }
@@ -3445,7 +3446,7 @@ onbx .hmd-italic {
    left: 0;
    width: 21px;
    height: 21px;
-   background: #7558ea;
+   background: #077A76;
    border-radius: 90px;
    transition: .3s
 }
@@ -3467,7 +3468,7 @@ onbx .hmd-italic {
 }
 
 .nwfrm-submit {
-   background: #7558ea;
+   background: #077A76;
    border-radius: 12px;
    padding: 20px 0;
    font-weight: 700;
@@ -3639,7 +3640,7 @@ onbx .hmd-italic {
 }
 
 #productPlanModal .custom-add-on-plans .card>.card-body small a {
-   color: #7558ea;
+   color: #077A76;
    font-weight: 800
 }
 
@@ -3711,7 +3712,7 @@ onbx .hmd-italic {
 }
 
 .decor-staging .plush_btn {
-   background: #7558ea;
+   background: #077A76;
    color: #fff;
    border: 0;
    display: flex;
@@ -3736,8 +3737,8 @@ onbx .hmd-italic {
 }
 
 .decor-staging .plush_btn:hover {
-   border: 1px solid #7558ea;
-   color: #7558ea;
+   border: 1px solid #077A76;
+   color: #077A76;
    background-color: transparent
 }
 
@@ -3780,7 +3781,7 @@ onbx .hmd-italic {
 }
 
 .main input:checked~.geekmark {
-   background-color: #7558ea;
+   background-color: #077A76;
    border: 1px solid transparent
 }
 
@@ -4033,7 +4034,7 @@ onbx .hmd-italic {
 .black-friday-sticky p a {
    color: #fff;
    margin-left: 7px;
-   background-color: #7558ea;
+   background-color: #077A76;
    padding: 7px 13px;
    border-radius: 5px
 }
@@ -5893,7 +5894,7 @@ onbx .hmd-italic {
 }
 
 .tooltipnew {
-   background-color: #7558ea;
+   background-color: #077A76;
    color: #fff;
    padding: 1px 5px;
    border-radius: 100px;
@@ -6041,7 +6042,7 @@ button:disabled {
 .hda-loader {
    border: 5px solid #f3f3f3;
    border-radius: 50%;
-   border-top: 5px solid #7558ea;
+   border-top: 5px solid #077A76;
    width: 50px;
    height: 50px;
    -webkit-animation: spin 2s linear infinite;
@@ -6259,7 +6260,7 @@ label.color-picker-code {
 }
 
 .btn-primary-c {
-   background: #7558ea;
+   background: #077A76;
    color: #fff;
    border: 0
 }
@@ -6282,7 +6283,7 @@ label.color-picker-code {
 
 .c-btn {
    width: fit-content;
-   background: #7558ea;
+   background: #077A76;
    border-radius: 11px;
    font-style: normal;
    font-weight: 700;
@@ -6388,8 +6389,8 @@ label.color-picker-code {
 }
 
 .btn-primary {
-   background: #7558ea;
-   border-color: #7558ea
+   background: #077A76;
+   border-color: #077A76
 }
 
 .question_variant, .question_variant .question-outer {
@@ -6633,7 +6634,7 @@ label.color-picker-code {
 }
 
 .options-outer .option-items li .option-item input:checked+label {
-   border-color: #7558ea;
+   border-color: #077A76;
    background: #cfe0fc
 }
 
@@ -6697,22 +6698,22 @@ div#serveyModal input.other_text {
 }
 
 div#serveyModal .uk-progress.progress-green::-webkit-progress-value {
-   background-color: #7558ea
+   background-color: #077A76
 }
 
 div#serveyModal .uk-progress.progress-green::-moz-progress-bar {
-   background-color: #7558ea
+   background-color: #077A76
 }
 
 div#serveyModal .uk-progress.progress-green::-ms-fill {
-   background-color: #7558ea
+   background-color: #077A76
 }
 
 .question-footer progress {
    width: 250px;
    height: 15px;
    border-radius: 30px;
-   border: 2px solid #7558ea;
+   border: 2px solid #077A76;
    overflow: hidden
 }
 
@@ -6721,23 +6722,23 @@ div#serveyModal .uk-progress.progress-green::-ms-fill {
 }
 
 .question-footer progress::-webkit-progress-value {
-   background-color: #7558ea
+   background-color: #077A76
 }
 
 .question-footer .uk-progress.progress-green::-webkit-progress-value {
-   background-color: #7558ea
+   background-color: #077A76
 }
 
 .question-footer .uk-progress.progress-green::-moz-progress-bar {
-   background-color: #7558ea
+   background-color: #077A76
 }
 
 .question-footer .uk-progress.progress-green::-ms-fill {
-   background-color: #7558ea
+   background-color: #077A76
 }
 
 .options-outer .option-items li .option-item label:hover {
-   border-color: #7558ea !important
+   border-color: #077A76 !important
 }
 
 .question-footer {
@@ -7025,7 +7026,7 @@ div#feedbackModel .logo {
    content: "<";
    display: inline-block;
    background: #fff;
-   color: #7558ea;
+   color: #077A76;
    font-size: 33px;
    line-height: 30px;
    font-weight: 400;
@@ -7040,8 +7041,8 @@ ul.pagination li.page-item.next a:before {
 }
 
 .pagination .page-item.active .page-link {
-   background-color: #7558ea;
-   border-color: #7558ea;
+   background-color: #077A76;
+   border-color: #077A76;
    width: 100%;
    height: 100%;
    display: flex;
@@ -7050,7 +7051,7 @@ ul.pagination li.page-item.next a:before {
 }
 
 .pagination .page-link {
-   color: #7558ea;
+   color: #077A76;
    padding: 0;
    width: 100%;
    height: 100%;
@@ -7096,7 +7097,7 @@ ul.pagination li.page-item.next a:before {
 
 .setting-menu a:hover {
    color: #fff;
-   background: #7558ea
+   background: #077A76
 }
 
 .setting-menu .card-body {
@@ -7197,7 +7198,7 @@ ul.pagination li.page-item.next a:before {
 
 .precision_suggestion_closebt {
    margin-left: 10px;
-   color: #7558ea
+   color: #077A76
 }
 
 .suggest-md-content a {
@@ -7210,7 +7211,7 @@ ul.pagination li.page-item.next a:before {
 }
 
 .modal_footer_button {
-   background-color: #7558ea !important;
+   background-color: #077A76 !important;
    border: none;
    border-radius: 10px;
    color: #fff;
@@ -7653,7 +7654,7 @@ ul.pagination li.page-item.next a:before {
    .perameters_table :is(th, td) {
       padding: .7rem .5rem !important;
       min-inline-size: 5.5rem !important;
-      border-block-end: 1px solid #7558ea !important;
+      border-block-end: 1px solid #077A76 !important;
       font-size: 12px !important
    }
 
@@ -8002,7 +8003,7 @@ div#painting-stag {
    outline: none;
    border: 0;
    font-size: 16px;
-   background: #7558ea;
+   background: #077A76;
    color: #fff;
    font-weight: 700;
    border-radius: 12px;
@@ -8061,7 +8062,7 @@ div#painting-stag {
 
 .perameters_table :is(th) {
    text-align: center;
-   background-color: #7558ea;
+   background-color: #077A76;
    color: #fff
 }
 
@@ -8072,7 +8073,7 @@ div#painting-stag {
 .perameters_table :is(th, td) {
    padding: .7rem .5rem;
    min-inline-size: 10rem;
-   border-block-end: 1px solid #7558ea;
+   border-block-end: 1px solid #077A76;
    font-size: 16px
 }
 
@@ -8234,8 +8235,8 @@ div#painting-stag {
 
 .more_credits {
    text-decoration: underline !important;
-   text-decoration-color: #7558ea;
-   color: #7558ea
+   text-decoration-color: #077A76;
+   color: #077A76
 }
 
 #modalUpgradePlusLimited .head {

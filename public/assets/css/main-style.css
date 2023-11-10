@@ -1,6 +1,8 @@
 body {
    background: #f9f9fb;
-   font-family: eudoxus sans
+   font-family: eudoxus sans;
+   overflow-x: hidden;
+
 }
 
 .banner-outer {
@@ -249,7 +251,8 @@ section.streamline-outer {
    position: absolute;
    top: 50%;
    left: 50%;
-   transform: translate(-50%, -50%)
+   transform: translate(-50%, -50%);
+   width: 50px;
 }
 
 .designs li h2 {
@@ -261,7 +264,7 @@ section.streamline-outer {
 }
 
 .designs li h2 span {
-   color: #43b0ff
+   color: #1e1634;
 }
 
 .agent-outer {

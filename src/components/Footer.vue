@@ -29,7 +29,7 @@
                                     <ul class="contact-list">
                                         <li>
                                             <a href="#">
-                                                <img src="/assets/images/Whie-Logo-scop3d.png" loading="lazy"
+                                                <img src="/assets/images/footer-Logo-scop3d.png" loading="lazy"
                                                     alt="Scop3D AI logo footer">
                                             </a>
                                         </li>
@@ -46,39 +46,21 @@
                                     <h6 class="footer-title">Connect with us</h6>
                                     <ul class="social-list">
                                         <li>
-                                            <a href="https://www.facebook.com">
+                                            <a href="https://www.facebook.com/profile.php?id=100093120717719">
                                                 <img src="/assets/images/facebook.png" width="15px" loading="lazy"
                                                     alt="facebook Scop3D AI">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.twitter.com/">
-                                                <img src="/assets/images/twitter.png" width="15px" loading="lazy"
-                                                    alt="twitter homedesigns ai">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.youtube.com/">
-                                                <img src="/assets/images/youtube.png" width="15px" loading="lazy"
+                                            <a href="https://www.linkedin.com/company/scop3dmedia/">
+                                                <img src="/assets/images/linkedin.png" width="15px" loading="lazy"
                                                     alt="youtube homedesigns ai">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.tiktok.com/">
-                                                <img src="/assets/images/tiktok.png" width="15px" loading="lazy"
-                                                    alt="tiktok homedesigns ai">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.instagram.com/">
-                                                <img src="/assets/images/instagram.png" width="15px" loading="lazy"
-                                                    alt="Scop3D AI instagram">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://pinterest.com/">
-                                                <img src="/assets/images/pinterest.png" width="15px" loading="lazy"
-                                                    alt="Scop3D AI pinterest">
+                                            <a href="https://www.youtube.com/@Scop3dteam">
+                                                <img src="/assets/images/youtube.png" width="15px" loading="lazy"
+                                                    alt="youtube homedesigns ai">
                                             </a>
                                         </li>
                                     </ul>
@@ -87,7 +69,10 @@
                         </div>
                     </div>
                     <div class="ft-btm">
-                        <p>Copyright 2023 Zemfar Solutions. all rights reserved</p>
+                        <p style="font-size: 12px;">
+                            © 2023 Scop3D. All rights reserved. 
+                            <a href="https://probdone.com" style="font-size: 0.5px; opacity: 0;"> Probdone </a>
+                        </p>
                     </div>
                 </div>
                 <span class="big-ai">AI</span>
