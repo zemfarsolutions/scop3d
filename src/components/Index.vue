@@ -2,6 +2,13 @@
     <section class="banner-outer">
         <div class="container">
             <div class="banner-inner">
+                <h1>Virtual Stagging <span>AI With One Click</span><br>
+                   </h1>
+                
+            </div>
+        </div>
+        <div class="container mb-3">
+            <div class="banner-inner">
                 <h1>Transform your <span>Real Estate Business</span><br>
                     with AI-Powered Design</h1>
                 <p>Sell Faster and Attract More Clients with Scop3D</p>
@@ -15,6 +22,22 @@
                 </a>
             </div>
         </div>
+    </section>
+    <section>
+        <!-- <a class="upgd-go mt-5" href="#">
+            <img class="strlight" src="/assets/images/light.svg" loading="lazy"
+                alt="button light version upgrade homedesigns">
+            Start Now
+        </a> -->
+        <form @submit.prevent="submit">
+            <input type="file" @input="form.image= $event.target.files">
+            
+            <button class="btn btn-primary" >Add Image</button>
+            
+        </form>
+        <div v-for="post in posts" :key="post.id">
+            <h5>{{ post.title }}</h5>
+          </div>
     </section>
     <section id="about-us" class="competitive-outer">
         <div class="container">
@@ -159,7 +182,51 @@
 <script setup>
 import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
+import axios from 'axios'
+import { ref ,onMounted ,reactive} from 'vue';
 
+const apiUrl = 'https://api.aihomedesign.com/api/public/v1/ai/image/upload';
+let form = reactive({
+    image : '',
+    serviceName: 'VS'
+});
+let submit = ()=>{
+    axios.post(apiUrl,form)
+      .then(response => {
+        console.log('Response:', response.data);
+      })
+      .catch(error => {
+        console.error('Error uploading data:', error);
+      });
+};
+
+// const postData = ref({
+
+//   userId: 1,
+//   image: null, // Additional property for the image file
+// });
+
+// const handleFileSelect = (event) => {
+//   const selectedFile = event.target.files[0];
+//   console.log("Selected File:", selectedFile);
+
+
+// };
+
+// const posts = ref([]);
+
+// // Fetch data using async function
+// const fetchData = async () => {
+//   try {
+//     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+//     posts.value = response.data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+// onMounted(() => {
+//   fetchData();
+// });
 const carouselSlides = ['Scop3D has completely revolutionized the way I present properties. It allows me\
                             to visualize the potential of each space and present it to my clients. My listings have\
                             never looked better!',
