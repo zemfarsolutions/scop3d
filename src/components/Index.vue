@@ -30,7 +30,7 @@
             Start Now
         </a> -->
         <form @submit.prevent="submit">
-            <input type="file" @input="form.image= $event.target.files[0]">
+            <input type="file" name="image" id="image" @input="updateFile">
             
             <button class="btn btn-primary" >Add Image</button>
             
@@ -183,31 +183,26 @@
 import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import axios from 'axios'
-import {reactive} from 'vue';
+import {reactive,ref} from 'vue';
+import FormData from 'form-data';
 
-const apiUrl = 'https://api.aihomedesign.com/api/public/v1/ai/image/upload';
-let form = reactive({
-    image : '',
-    serviceName: 'VS'
-});
-let submit = ()=>{
-    console.log(form.image)
+const fileInput = ref(null);
 
-    axios.post(apiUrl,form)
-      .then(response => {
-        console.log('Response:', response.data);
-      })
-      .catch(error => {
-        console.error('Error uploading data:', error);
-      });
-    // axios({
-    //     method: 'post',
-    //     url: apiUrl,
-    //     data: {
-    //         image: form.image,
-    //         serviceName:form.serviceName
-    //     }
-    // });
+const updateFile = (event) => {
+  fileInput.value = event.target.files[0];
+};
+
+const submit = async () => {
+  const formData = new FormData();
+  formData.append('image', fileInput.value);
+  formData.append('serviceName', 'VS');
+
+  try {
+    const response = await axios.post('https://api.aihomedesign.com/api/public/v1/ai/image/upload?image', formData);
+    console.log(JSON.stringify(response.data));
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 
