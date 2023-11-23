@@ -30,7 +30,7 @@
             Start Now
         </a> -->
         <form @submit.prevent="submit">
-            <input type="file" @input="form.image= $event.target.files">
+            <input type="file" @input="form.image= $event.target.files[0]">
             
             <button class="btn btn-primary" >Add Image</button>
             
@@ -183,7 +183,7 @@
 import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import axios from 'axios'
-import { ref ,onMounted ,reactive} from 'vue';
+import {reactive} from 'vue';
 
 const apiUrl = 'https://api.aihomedesign.com/api/public/v1/ai/image/upload';
 let form = reactive({
@@ -191,6 +191,8 @@ let form = reactive({
     serviceName: 'VS'
 });
 let submit = ()=>{
+    console.log(form.image)
+
     axios.post(apiUrl,form)
       .then(response => {
         console.log('Response:', response.data);
@@ -198,22 +200,23 @@ let submit = ()=>{
       .catch(error => {
         console.error('Error uploading data:', error);
       });
+    // axios({
+    //     method: 'post',
+    //     url: apiUrl,
+    //     data: {
+    //         image: form.image,
+    //         serviceName:form.serviceName
+    //     }
+    // });
 };
 
-// const postData = ref({
-
-//   userId: 1,
-//   image: null, // Additional property for the image file
-// });
 
 // const handleFileSelect = (event) => {
 //   const selectedFile = event.target.files[0];
 //   console.log("Selected File:", selectedFile);
 
-
 // };
 
-// const posts = ref([]);
 
 // // Fetch data using async function
 // const fetchData = async () => {
