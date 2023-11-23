@@ -29,12 +29,12 @@
                 alt="button light version upgrade homedesigns">
             Start Now
         </a> -->
-        <form @submit.prevent="submit">
+        <!-- <form @submit.prevent="submit">
             <input type="file" name="image" id="image" @input="updateFile">
 
             <button class="btn btn-primary">Add Image</button>
 
-        </form>
+        </form> -->
         <div v-for="post in posts" :key="post.id">
             <h5>{{ post.title }}</h5>
         </div>
@@ -69,7 +69,7 @@
                 enhancing its value and appeal.</p>
             <!-- <img src="/assets/images/real-estate-text-color-change.jpg" alt=""> -->
             <div id="uploader_section" class="uploader_section">
-                <form class="w-full mx-auto p-4 lg:p-8 bg-brand_500 bg-opacity-20 rounded-3xl space-y-4">
+                <form class="w-full mx-auto p-4 lg:p-8 bg-brand_500 bg-opacity-20 rounded-3xl space-y-4" >
                     <div>
                         <div class="file-pond-dashboard rounded-lg dashed-border relative cursor-pointer overflow-hidden"
                             id="browse-HP">
@@ -81,8 +81,8 @@
                                         data-style-load-indicator-position="right"
                                         data-style-progress-indicator-position="right"
                                         data-style-button-remove-item-align="false" style="height: 446px;">
-                                        <input class="filepond--browser" type="file" id="filepond--browser-2otqr6ayx"
-                                            name="image" aria-controls="filepond--assistant-2otqr6ayx">
+                                        <input class="filepond--browser filepond" type="file" id="filepond--browser-2otqr6ayx"
+                                            name="filepond" aria-controls="filepond--assistant-2otqr6ayx" @change="submit" @input="updateFile">
                                         <div class="filepond--drop-label"
                                             style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
                                             <label for="filepond--browser-2otqr6ayx" id="filepond--drop-label-2otqr6ayx"
@@ -132,7 +132,7 @@
         </div> -->
                     </div>
 
-                    <!-- <div class="flex items-center justify-between lg:space-x-4 space-x-2 overflow-x-auto pb-1">
+                    <div class="flex items-center justify-between lg:space-x-4 space-x-2 overflow-x-auto pb-1">
         <div><a
             class="flex flex-col rounded-2xl relative text-center px-4 lg:py-4 py-2 cursor-pointer transition-all hover:bg-opacity-100 bg-[#0000001A] min-w-[165px] opacity-40 pointer-events-auto !cursor-default"
             id="HP-IDservice-selection">
@@ -168,10 +168,20 @@
                 loading="lazy" width="24" class="mx-auto"></div>
             <p class="text-body-md text-brand_300">Item Removal</p>
           </a></div>
-      </div> -->
+      </div>
                 </form>
             </div>
         </div>
+        <file-pond
+      name="test"
+      ref="pond"
+      label-idle="Drop files here..."
+      v-bind:allow-multiple="true"
+      accepted-file-types="image/jpeg, image/png"
+      v-bind:server="apiEndpoint"
+      v-bind:files="myFiles"
+      v-on:init="handleFilePondInit"
+    />
     </section>
 
     <section class="streamline-outer">
@@ -292,6 +302,7 @@ import axios from 'axios'
 import { reactive, ref } from 'vue';
 import FormData from 'form-data';
 
+
 const fileInput = ref(null);
 
 const updateFile = (event) => {
@@ -311,26 +322,6 @@ const submit = async () => {
     }
 };
 
-
-// const handleFileSelect = (event) => {
-//   const selectedFile = event.target.files[0];
-//   console.log("Selected File:", selectedFile);
-
-// };
-
-
-// // Fetch data using async function
-// const fetchData = async () => {
-//   try {
-//     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-//     posts.value = response.data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
-// onMounted(() => {
-//   fetchData();
-// });
 const carouselSlides = ['Scop3D has completely revolutionized the way I present properties. It allows me\
                             to visualize the potential of each space and present it to my clients. My listings have\
                             never looked better!',
@@ -369,4 +360,72 @@ const breakpoints = {
 </script>
 
 
+<script>
+import axios from 'axios';
+// Import Vue FilePond
+import vueFilePond from "vue-filepond";
 
+// Import FilePond styles
+import "filepond/dist/filepond.min.css";
+
+// Import FilePond plugins
+// Please note that you need to install these plugins separately
+
+// Import image preview plugin styles
+import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+
+// Import image preview and file type validation plugins
+import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
+import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+
+// Create component
+const FilePond = vueFilePond(
+  FilePondPluginFileValidateType,
+  FilePondPluginImagePreview
+);
+
+export default {
+  name: "app",
+  data: function () {
+    return { 
+        apiEndpoint: '',
+        myFiles: [] };
+  },
+  methods: {
+    handleFilePondInit: function () {
+      console.log("FilePond has initialized");
+      this.submit()
+      // FilePond instance methods are available on `this.$refs.pond`
+    },
+    async submit() {
+      const formData = new FormData();
+      const fileInput = this.$refs.pond.getFiles()[0].file; // Get the first file
+console.log(fileInput);
+      formData.append('image', fileInput);
+      formData.append('serviceName', 'VS');
+
+      if (fileInput && fileInput.file) {
+        const formData = new FormData();
+        formData.append('image', fileInput.file);
+        formData.append('serviceName', 'VS');
+
+        try {
+        this.apiEndpoint = 'https://api.aihomedesign.com/api/public/v1/ai/image/upload?image'
+
+          const response = await axios.post('https://api.aihomedesign.com/api/public/v1/ai/image/upload?image', formData);
+          console.log(response);
+        } catch (error) {
+          console.error(error);
+        }
+      } else {
+        console.error('No file selected');
+      }
+
+    },
+  
+  },
+  components: {
+    FilePond,
+  },
+};
+</script>

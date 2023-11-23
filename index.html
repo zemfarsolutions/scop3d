@@ -35,6 +35,13 @@
     <link rel="stylesheet" href="/assets/css/uploader-section.css" />
 
 
+    <!-- add to document <head> -->
+<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
+<link
+    href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+    rel="stylesheet"
+/>
+
 
 
     
@@ -44,6 +51,10 @@
     <div id="app"></div>
 
     <script type="module" src="/src/main.ts"></script>
+
+    <!-- add before </body> -->
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
     <script src="/assets/js/owl.carousel.js" type="fc83d25c74d8c30f99980e60-text/javascript"></script>
     <script type="fc83d25c74d8c30f99980e60-text/javascript">
