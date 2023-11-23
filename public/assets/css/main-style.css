@@ -41,6 +41,10 @@ body {
    border-radius: 20px
 }
 
+.banner-outer .banner-inner .banner-img img {
+   margin: auto;
+}
+
 .competitive-inner {
    float: left;
    width: 100%
@@ -156,7 +160,8 @@ h2.title-outer span {
 
 .potential-outer {
    text-align: center;
-   background: url(../images/potential-bg.png) no-repeat top center;
+   /* background: url(../images/potential-bg.png) no-repeat top center; */
+   background: url(../images/banner-bg.png) no-repeat top center;
    background-size: 100% auto;
    padding: 50px 0 0
 }
@@ -267,6 +272,10 @@ section.streamline-outer {
    color: #1e1634;
 }
 
+.designs li h2 img {
+   margin: auto;
+}
+
 .agent-outer {
    background: url(../images/potential-bg.png) no-repeat top center;
    background-size: cover;
@@ -287,8 +296,10 @@ section.streamline-outer {
 .review-inner1 {
    /* background: url(../images/bg-1.png) no-repeat top center; */
    /* background-size: cover */
-   background-color: #25344a14;
-   opacity: 0.85;
+   /* opacity: 0.85; */
+   background-color: rgb(255 255 255 / 20%);
+   box-shadow: 0px -1px 13px 1px rgba(0, 0, 0, .05);
+  backdrop-filter: blur(10px);
    padding: 20px;
 }
 

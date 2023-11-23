@@ -386,6 +386,7 @@ body {
    background: #fff;
    transition: ease .2s;
    text-transform: uppercase;
+   display: inline-flex;
  }
 
 .hmd-navflx {
@@ -8422,4 +8423,9 @@ div#painting-stag {
    font-size: 18px;
    margin-bottom: 10px;
    text-align: center
+}
+
+#uploader_section form {
+   box-shadow: 0px -1px 13px 1px rgba(0, 0, 0, .05);
+   backdrop-filter: blur(10px);
 }

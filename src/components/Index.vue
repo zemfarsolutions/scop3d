@@ -3,8 +3,8 @@
         <div class="container">
             <div class="banner-inner">
                 <h1>Virtual Stagging <span>AI With One Click</span><br>
-                   </h1>
-                
+                </h1>
+
             </div>
         </div>
         <div class="container mb-3">
@@ -31,13 +31,13 @@
         </a> -->
         <form @submit.prevent="submit">
             <input type="file" name="image" id="image" @input="updateFile">
-            
-            <button class="btn btn-primary" >Add Image</button>
-            
+
+            <button class="btn btn-primary">Add Image</button>
+
         </form>
         <div v-for="post in posts" :key="post.id">
             <h5>{{ post.title }}</h5>
-          </div>
+        </div>
     </section>
     <section id="about-us" class="competitive-outer">
         <div class="container">
@@ -67,9 +67,113 @@
             <p style="color:#fff; opacity: 0.7;">Don't let outdated interiors put off potential buyers. With Scop3D,
                 transform any space into a modern, appealing<br> haven. Show buyers the true potential of every property,
                 enhancing its value and appeal.</p>
-            <img src="/assets/images/real-estate-text-color-change.jpg" alt="">
+            <!-- <img src="/assets/images/real-estate-text-color-change.jpg" alt=""> -->
+            <div id="uploader_section" class="uploader_section">
+                <form class="w-full mx-auto p-4 lg:p-8 bg-brand_500 bg-opacity-20 rounded-3xl space-y-4">
+                    <div>
+                        <div class="file-pond-dashboard rounded-lg dashed-border relative cursor-pointer overflow-hidden"
+                            id="browse-HP">
+                            <div class="relative">
+                                <div class="filepond--wrapper">
+                                    <div class="filepond--root filepond--hopper" data-style-panel-aspect-ratio="2:1"
+                                        data-style-button-remove-item-position="left"
+                                        data-style-button-process-item-position="right"
+                                        data-style-load-indicator-position="right"
+                                        data-style-progress-indicator-position="right"
+                                        data-style-button-remove-item-align="false" style="height: 446px;">
+                                        <input class="filepond--browser" type="file" id="filepond--browser-2otqr6ayx"
+                                            name="image" aria-controls="filepond--assistant-2otqr6ayx">
+                                        <div class="filepond--drop-label"
+                                            style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
+                                            <label for="filepond--browser-2otqr6ayx" id="filepond--drop-label-2otqr6ayx"
+                                                aria-hidden="true">
+                                                <div class="flex flex-col items-center lg:max-w-[245px] !cursor-pointer  ">
+                                                    <img src="/assets/images/uploader-icon.svg" width="64" class="mb-4">
+                                                    <span
+                                                        class="text-title-sm text-brand_200 mb-4 font-bold flex  tracking-wide "><span
+                                                            class="lg:flex hidden mr-1">Drag or</span> Select Your
+                                                        Photo</span>
+                                                    <span
+                                                        class="  text-body-sm leading-5 tracking-wide text-brand_300 mb-4 ">
+                                                        Supported
+                                                        formats: JPG, JPEG, PNG, WEBP
+                                                        Max size 50 MB
+                                                    </span>
+                                                    <div
+                                                        class="border flex justify-center items-center !rounded-full bg-brand_500  text-gray_100 border-none outline-none py-2 pr-6 ps-4 mb-2">
+                                                        <img src="/assets/images/upload-icon.svg">
+                                                        <span>Upload</span>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="filepond--list-scroller" style="transform: translate3d(0px, 0px, 0px);">
+                                            <ul class="filepond--list" role="list"></ul>
+                                        </div>
+                                        <div class="filepond--panel filepond--panel-root" data-scalable="false">
+                                            <div class="filepond--panel-top filepond--panel-root"></div>
+                                            <div class="filepond--panel-center filepond--panel-root"
+                                                style="transform: translate3d(0px, 260px, 0px) scale3d(1, 0, 1);"></div>
+                                            <div class="filepond--panel-bottom filepond--panel-root"
+                                                style="transform: translate3d(0px, 260px, 0px);"></div>
+                                        </div>
+                                        <div class="filepond--drip"></div><span class="filepond--assistant"
+                                            id="filepond--assistant-2otqr6ayx" role="status" aria-live="polite"
+                                            aria-relevant="additions"></span>
+                                        <fieldset class="filepond--data"></fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div
+                        class="absolute -left-12 top-0 text-gray_100 text-body-sm bg-brand_400 bg-opacity-60 px-8 text-start min-w-[240px] -rotate-45 overflow-hidden py-2 FONT-BOLD">
+                        &nbsp; &nbsp; Try For FREE </div> -->
+                        </div>
+                        <!-- <div class="lg:h-[500px] h-[240px] w-full white bg-gray_700 rounded-lg animate-pulse" style="display: none;">
+        </div> -->
+                    </div>
+
+                    <!-- <div class="flex items-center justify-between lg:space-x-4 space-x-2 overflow-x-auto pb-1">
+        <div><a
+            class="flex flex-col rounded-2xl relative text-center px-4 lg:py-4 py-2 cursor-pointer transition-all hover:bg-opacity-100 bg-[#0000001A] min-w-[165px] opacity-40 pointer-events-auto !cursor-default"
+            id="HP-IDservice-selection">
+            <div class="mb-2"><img src="https://revi.rvstatic.com/aihomedesign/header-icons/inactive-ID.svg"
+                loading="lazy" width="24" class="mx-auto"></div>
+            <p class="text-body-md text-brand_300">Interior Design</p>
+          </a></div>
+        <div><a
+            class="flex flex-col rounded-2xl relative text-center px-4 lg:py-4 py-2 cursor-pointer transition-all hover:bg-opacity-100 bg-[#0000001A] min-w-[165px] opacity-40 pointer-events-auto !cursor-default"
+            id="HP-VSservice-selection">
+            <div class="mb-2"><img src="https://revi.rvstatic.com/aihomedesign/header-icons/inactive-VS.svg"
+                loading="lazy" width="24" class="mx-auto"></div>
+            <p class="text-body-md text-brand_300">Virtual Staging</p>
+          </a></div>
+        <div><a
+            class="flex flex-col rounded-2xl relative text-center px-4 lg:py-4 py-2 cursor-pointer transition-all hover:bg-opacity-100 bg-[#0000001A] min-w-[165px] opacity-40 pointer-events-auto !cursor-default"
+            id="HP-IEservice-selection">
+            <div class="mb-2"><img src="https://revi.rvstatic.com/aihomedesign/header-icons/inactive-IE.svg"
+                loading="lazy" width="24" class="mx-auto"></div>
+            <p class="text-body-md text-brand_300">Image Enhancement</p>
+          </a></div>
+        <div><a
+            class="flex flex-col rounded-2xl relative text-center px-4 lg:py-4 py-2 cursor-pointer transition-all hover:bg-opacity-100 bg-[#0000001A] min-w-[165px] opacity-40 pointer-events-auto !cursor-default"
+            id="HP-DDservice-selection">
+            <div class="mb-2"><img src="https://revi.rvstatic.com/aihomedesign/header-icons/inactive-D2D.svg"
+                loading="lazy" width="24" class="mx-auto"></div>
+            <p class="text-body-md text-brand_300">Day to Dusk</p>
+          </a></div>
+        <div><a
+            class="flex flex-col rounded-2xl relative text-center px-4 lg:py-4 py-2 cursor-pointer transition-all hover:bg-opacity-100 bg-[#0000001A] min-w-[165px] opacity-40 pointer-events-auto !cursor-default"
+            id="HP-IRservice-selection">
+            <div class="mb-2"><img src="https://revi.rvstatic.com/aihomedesign/header-icons/inactive-IR.svg"
+                loading="lazy" width="24" class="mx-auto"></div>
+            <p class="text-body-md text-brand_300">Item Removal</p>
+          </a></div>
+      </div> -->
+                </form>
+            </div>
         </div>
     </section>
+
     <section class="streamline-outer">
         <div class="container">
             <div class="competitive-inner">
@@ -117,7 +221,7 @@
                 </li>
                 <li>
                     <div class="design-icon"> <img src="/assets/images/design-icon04.png" alt=""> </div>
-                    <h2><img src="/assets/images/stars.png" alt=""> <br />
+                    <h2><img src="/assets/images/stars.png" alt="">
                         <span>Star Rating </span>
                     </h2>
                     <p>Scop3D AI has a 5 star rating from our members that use it everyday. </p>
@@ -133,13 +237,15 @@
                 have used Scop3D to transform their<br> businesses, attract more clients, and sell properties
                 faster.</p>
             <div class="review-slider">
-                <Carousel :wrap-around="true" v-bind="settings" :wrapAround="true" :autoplay="3000" :breakpoints="breakpoints">
+                <Carousel :wrap-around="true" v-bind="settings" :wrapAround="true" :autoplay="3000"
+                    :breakpoints="breakpoints">
                     <Slide v-for="slide in carouselSlides" :key="slide" class="custom2">
                         <div class="item">
                             <div class="review-inner review-inner1">
                                 <div class="author-content">
                                     <p>"Scop3D has completely revolutionized the way I present properties. It allows me
-                                        to visualize the potential of each space and present it to my clients. My listings have
+                                        to visualize the potential of each space and present it to my clients. My listings
+                                        have
                                         never looked better!" </p>
                                 </div>
                                 <div class="author-name">
@@ -183,26 +289,26 @@
 import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import axios from 'axios'
-import {reactive,ref} from 'vue';
+import { reactive, ref } from 'vue';
 import FormData from 'form-data';
 
 const fileInput = ref(null);
 
 const updateFile = (event) => {
-  fileInput.value = event.target.files[0];
+    fileInput.value = event.target.files[0];
 };
 
 const submit = async () => {
-  const formData = new FormData();
-  formData.append('image', fileInput.value);
-  formData.append('serviceName', 'VS');
+    const formData = new FormData();
+    formData.append('image', fileInput.value);
+    formData.append('serviceName', 'VS');
 
-  try {
-    const response = await axios.post('https://api.aihomedesign.com/api/public/v1/ai/image/upload?image', formData);
-    console.log(JSON.stringify(response.data));
-  } catch (error) {
-    console.error(error);
-  }
+    try {
+        const response = await axios.post('https://api.aihomedesign.com/api/public/v1/ai/image/upload?image', formData);
+        console.log(JSON.stringify(response.data));
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 
@@ -228,37 +334,37 @@ const submit = async () => {
 const carouselSlides = ['Scop3D has completely revolutionized the way I present properties. It allows me\
                             to visualize the potential of each space and present it to my clients. My listings have\
                             never looked better!',
-                            'Scop3D has completely revolutionized the way I present properties. It allows me\
+    'Scop3D has completely revolutionized the way I present properties. It allows me\
                             to visualize the potential of each space and present it to my clients. My listings have\
                             never looked better!',
-                            'Scop3D has completely revolutionized the way I present properties. It allows me\
+    'Scop3D has completely revolutionized the way I present properties. It allows me\
                             to visualize the potential of each space and present it to my clients. My listings have\
                             never looked better!'];
 
-const settings  = {
+const settings = {
     itemsToShow: 3,
     snapAlign: 'center',
 }
 
 const breakpoints = {
-      // 700px and up
-      0: {
+    // 700px and up
+    0: {
         itemsToShow: 1,
         snapAlign: 'center',
         nav: false
-      },
-      //
-      600: {
+    },
+    //
+    600: {
         itemsToShow: 2,
         snapAlign: 'start',
         nav: false
-      },
-      // 1024 and up
-      1022: {
+    },
+    // 1024 and up
+    1022: {
         itemsToShow: 3,
         snapAlign: 'start',
         nav: false
-      }
+    }
 }
 </script>
 
