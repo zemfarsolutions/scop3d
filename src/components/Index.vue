@@ -173,15 +173,15 @@
             </div>
         </div>
         <file-pond
-      name="test"
-      ref="pond"
-      label-idle="Drop files here..."
-      v-bind:allow-multiple="true"
-      accepted-file-types="image/jpeg, image/png"
-      v-bind:server="apiEndpoint"
-      v-bind:files="myFiles"
-      v-on:init="handleFilePondInit"
-    />
+            name="test"
+            ref="pond"
+            label-idle="Drop files here..."
+            v-bind:allow-multiple="true"
+            accepted-file-types="image/jpeg, image/png"
+            v-bind:server="apiEndpoint"
+            :files="myFiles"
+            @change="handleFilePondInit"
+        />
     </section>
 
     <section class="streamline-outer">
@@ -389,7 +389,8 @@ export default {
   data: function () {
     return { 
         apiEndpoint: '',
-        myFiles: [] };
+        myFiles: [] 
+    };
   },
   methods: {
     handleFilePondInit: function () {
@@ -399,7 +400,7 @@ export default {
     },
     async submit() {
       const formData = new FormData();
-      const fileInput = this.$refs.pond.getFiles()[0].file; // Get the first file
+      const fileInput = this.$refs.pond.getFiles(); // Get the first file
 console.log(fileInput);
       formData.append('image', fileInput);
       formData.append('serviceName', 'VS');
