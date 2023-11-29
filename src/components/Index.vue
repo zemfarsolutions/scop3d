@@ -91,21 +91,21 @@
                                                 aria-hidden="true">
                                                 <div class="flex flex-col items-center lg:max-w-[100%] !cursor-pointer  ">
                                                     <img src="/assets/images/uploader-icon.svg" width="50%" class="mb-4">
-                                                    <file-pond name="test" ref="pond" label-idle="Drop files here..."
+                                                    <!-- <file-pond name="test" ref="pond" label-idle="Drop files here..."
                                                         v-bind:allow-multiple="true"
                                                         accepted-file-types="image/jpeg, image/png" v-bind:files="myFiles"
-                                                        v-bind:server="MyServer" @addfile="onAddFile" />
+                                                        v-bind:server="MyServer" @addfile="onAddFile" /> -->
                                                     <span
                                                         class="  text-body-sm leading-5 tracking-wide text-brand_300 mb-4 ">
                                                         Supported
                                                         formats: JPG, JPEG, PNG, WEBP
                                                         Max size 50 MB
                                                     </span>
-                                                    <!-- <div
+                                                    <div
                                                         class="border flex justify-center items-center !rounded-full bg-brand_500  text-gray_100 border-none outline-none py-2 pr-6 ps-4 mb-2">
                                                         <img src="/assets/images/upload-icon.svg">
                                                         <span>Upload</span>
-                                                    </div> -->
+                                                    </div>
                                                 </div>
                                             </label>
                                         </div>
@@ -177,18 +177,18 @@
             </div>
         </div>
 
-        <div class="container">
+        <!-- <div class="container">
             <div>
-                <file-pond name="test" ref="pond" label-idle="Drop files here..." v-bind:allow-multiple="true"
+                <file-pond name="test" ref="pond" label-idle="Drop files here..." v-bind:allow-multiple="false"
                     accepted-file-types="image/jpeg, image/png" v-bind:files="myFiles" v-bind:server="MyServer"
                     @addfile="onAddFile" />
             </div>
             <div class="row d-flex">
                 <div v-for="(image, index) in images" :key="index" class="col-md-3">
                     <div class="custom-control custom-checkbox image-checkbox">
-                        <input type="radio" @change="selectedImage = image.id" class="form-check-input" style="position: absolute; z-index: 9999;background-color: #198754;
-                                                                                            border-color: #198754;"
-                            name="selectImg">
+                        <input type="radio" @change="selectedImage = image.id" class="form-check-input"
+                            style="position: absolute; z-index: 9999;background-color: #198754;
+                                                                                                        border-color: #198754;" name="selectImg">
                         <label class="custom-control-label" for="ck1a">
                             <img :src="image.src" alt="#" class="img-fluid" style="width: 200px;position: relative;">
                         </label>
@@ -199,10 +199,10 @@
                 <button class="btn btn-sm btn-success" @click="generate" style="font-size: 15px">Generate AI</button>
             </div>
 
-            <!-- SINGLE SELECTION -->
-            <!-- <vue-select-image :dataImages="images" @onselectimage="onSelectImage">
-            </vue-select-image> -->
-        </div>
+            SINGLE SELECTION
+            <vue-select-image :dataImages="images" @onselectimage="onSelectImage">
+            </vue-select-image>
+        </div> -->
 
     </section>
 
@@ -317,11 +317,11 @@
     </section>
 </template>
 
-<script setup>
+<script setup >
 import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import axios from 'axios'
-import { reactive, ref } from 'vue';
+import { ref } from 'vue';
 import FormData from 'form-data';
 
 const fileInput = ref(null);
