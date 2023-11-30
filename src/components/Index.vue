@@ -69,7 +69,7 @@
                 enhancing its value and appeal.</p>
             <!-- <img src="/assets/images/real-estate-text-color-change.jpg" alt=""> -->
             <div id="uploader_section" class="uploader_section">
-                <form class="w-full mx-auto p-4 lg:p-8 bg-brand_500 bg-opacity-20 rounded-3xl space-y-4">
+                <!-- <form class="w-full mx-auto p-4 lg:p-8 bg-brand_500 bg-opacity-20 rounded-3xl space-y-4">
                     <div>
                         <div class="file-pond-dashboard rounded-lg dashed-border relative cursor-pointer overflow-hidden"
                             id="browse-HP">
@@ -165,42 +165,39 @@
                                 <p class="text-body-md text-brand_300">Item Removal</p>
                             </a></div>
                     </div>
+                </form> -->
+                <form class="w-full mx-auto p-4 lg:p-8 uploader_section">
+                    <div>
+                        <file-pond name="test" ref="pond" label-idle=" Drop files here..." v-bind:allow-multiple="true"
+                            accepted-file-types="image/jpeg, image/png" v-bind:files="myFiles" v-bind:server="MyServer"
+                            @addfile="onAddFile" maxFiles="4" />
+                    </div>
+                    <div class="row d-flex">
+                        <div v-for="(image, index) in images" :key="index" class="col-md-3">
+                            <div class="custom-control custom-checkbox image-checkbox filepond--image--preview--area">
+                                <input type="radio" @change="selectedImage = image.id" class="form-check-input radio-button__input-image_select"
+                                    name="selectImg">
+                                <label class="custom-control-label" for="ck1a">
+                                    <img :src="image.src" alt="#" class="filepond--image--preview">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="images.length > 0">
+                        <button class="btn upgd-go" @click="generate">Generate AI</button>
+                    </div>
+
+                    <!-- SINGLE SELECTION -->
+                    <vue-select-image :dataImages="images" @onselectimage="onSelectImage">
+                    </vue-select-image>
                 </form>
             </div>
         </div>
-
-        <!-- <div class="container">
-            <div>
-                <file-pond name="test" ref="pond" label-idle="Drop files here..." v-bind:allow-multiple="false"
-                    accepted-file-types="image/jpeg, image/png" v-bind:files="myFiles" v-bind:server="MyServer"
-                    @addfile="onAddFile" />
-            </div>
-            <div class="row d-flex">
-                <div v-for="(image, index) in images" :key="index" class="col-md-3">
-                    <div class="custom-control custom-checkbox image-checkbox">
-                        <input type="radio" @change="selectedImage = image.id" class="form-check-input"
-                            style="position: absolute; z-index: 9999;background-color: #198754;
-                                                                                                        border-color: #198754;" name="selectImg">
-                        <label class="custom-control-label" for="ck1a">
-                            <img :src="image.src" alt="#" class="img-fluid" style="width: 200px;position: relative;">
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div v-if="images.length > 0">
-                <button class="btn btn-sm btn-success" @click="generate" style="font-size: 15px">Generate AI</button>
-            </div>
-
-            SINGLE SELECTION
-            <vue-select-image :dataImages="images" @onselectimage="onSelectImage">
-            </vue-select-image>
-        </div> -->
-
     </section>
     <!-- <file-pond name="test" ref="pond" label-idle="Drop files here..." v-bind:allow-multiple="true"
         accepted-file-types="image/jpeg, image/png" v-bind:files="myFiles" v-bind:server="MyServer" @addfile="onAddFile" /> -->
 
-    <ImageSlider/>
+    <ImageSlider />
 
     <section class="streamline-outer">
         <div class="container">

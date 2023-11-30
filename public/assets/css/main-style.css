@@ -299,7 +299,7 @@ section.streamline-outer {
    /* opacity: 0.85; */
    background-color: rgb(255 255 255 / 20%);
    box-shadow: 0px -1px 13px 1px rgba(0, 0, 0, .05);
-  backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
    padding: 20px;
 }
 
@@ -1549,4 +1549,59 @@ section.estate-outer.price-guide {
    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/neighborhoodCard4.jpg');
    background-repeat: no-repeat;
    background-size: cover;
+}
+
+#uploader_section form {
+   box-shadow: 0px -1px 13px 1px rgba(0, 0, 0, .05);
+   background: rgb(7, 122, 118, 0.6);
+   backdrop-filter: blur(10px);
+   border-radius: 15px;
+}
+
+.filepond--item {
+   width: calc(25% - 0.5em);
+   max-height: 150px !important;
+   min-height: 150px !important;
+}
+
+.filepond--credits {
+   display: none !important;
+}
+
+.filepond--drop-label {
+   color: #fff !important;
+}
+
+.filepond--item-panel {
+   background-color: transparent !important;
+   box-shadow: none !important;
+   border: 0 !important;
+}
+
+.filepond--panel-root {
+   background: rgb(7, 122, 118, 0.8) !important;
+   /* border-radius: 6px; */
+   color: #fff;
+}
+
+.filepond--image--preview--area {
+   position: relative;
+}
+
+
+.radio-button__input-image_select {
+   z-index: 9999;
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   background-color: #fff;
+   border: 3px solid #077A76;
+   top: 0px;
+}
+
+.filepond--image--preview {
+
+   width: 100%;
+   position: relative;
+   border-radius: 15px;
 }
