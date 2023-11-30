@@ -131,7 +131,7 @@ h3.sub-title {
    padding: 0 0 0 40px
 }
 
-.video-inner::after {
+/* .video-inner::after {
    content: "";
    position: absolute;
    bottom: -5px;
@@ -140,7 +140,7 @@ h3.sub-title {
    height: 150px;
    background: url(../images/Isolation_Mode.png) no-repeat top center;
    z-index: -1
-}
+} */
 
 h2.title-outer span {
    color: #077A76
@@ -178,7 +178,7 @@ h2.title-outer span {
    padding-top: 20px
 }
 
-.video-inner.video-inner2::after {
+/* .video-inner.video-inner2::after {
    background: url(../images/Isolation_Mode2.png) no-repeat top center;
    top: 50px;
    right: -20px;
@@ -186,7 +186,7 @@ h2.title-outer span {
    bottom: inherit;
    width: 128px;
    height: 128px
-}
+} */
 
 .sidenav.open-menu {
    width: 100%
@@ -226,7 +226,7 @@ section.streamline-outer {
    padding: 0 0 70px
 }
 
-.estate-outer {
+/* .estate-outer {
    display: inline-block;
    vertical-align: top;
    width: 100%;
@@ -234,7 +234,7 @@ section.streamline-outer {
    padding: 50px 0 110px;
    background: url(../images/estate-bg.png) no-repeat top center;
    background-size: cover
-}
+} */
 
 .designs {
    column-count: 4;
@@ -330,10 +330,10 @@ section.streamline-outer {
    margin: 0
 }
 
-.author-name {
+/* .author-name {
    background: url(../images/quata.png) no-repeat right top;
    padding: 0 60px 0 0
-}
+} */
 
 .author-content {
    display: inline-block;
@@ -1516,3 +1516,62 @@ section.estate-outer.price-guide {
 .pricing {
    position: revert
 }
+
+
+
+
+
+/* 
+.img-comp-container {
+   position: relative;
+   height: 200px;
+   overflow: hidden !important;
+   box-sizing: border-box;
+}
+
+.img-comp-img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   overflow: hidden !important;
+   box-sizing: border-box;
+}
+
+.img-comp-img img {
+   display: block;
+   vertical-align: middle;
+   max-width: 100%;
+}
+
+.img-comp-slider {
+   position: absolute;
+   z-index: 9;
+   cursor: ew-resize;
+   width: 40px;
+   height: 40px;
+   background-color: #077A76;
+   opacity: 0.7;
+   border-radius: 50%;
+}
+
+.card--before--after {
+   padding: 15px;
+   border-radius: 15px;
+   backdrop-filter: blur(10px);
+   box-shadow: 0px -1px 13px 1px rgba(0, 0, 0, .05);
+   background-color: rgb(7, 122, 118, 0.4);
+   border: 0;
+   color: #fff;
+}
+
+.card--before--after .card-text {
+   color: #fff;
+}
+
+.image--before--after--result {
+   margin: 50px 0;
+   padding: 50px 0;
+   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/neighborhoodCard4.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+} */

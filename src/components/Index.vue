@@ -507,8 +507,8 @@ export default {
         };
     },
     components: {
-        FilePond,
-    },
+        FilePond
+    }
 };
 
 
