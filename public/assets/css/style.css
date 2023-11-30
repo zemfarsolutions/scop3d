@@ -251,12 +251,12 @@
    }
 
    *::-webkit-scrollbar-track {
-      background: #41326a
+      background: #f1f1f1
    }
 
    *::-webkit-scrollbar-thumb {
       background-color: #077A76;
-      border-radius: 10px;
+      /* border-radius: 10px; */
       border: 3px solid #077A76
    }
 
