@@ -91,10 +91,7 @@
                                                 aria-hidden="true">
                                                 <div class="flex flex-col items-center lg:max-w-[100%] !cursor-pointer  ">
                                                     <img src="/assets/images/uploader-icon.svg" width="50%" class="mb-4">
-                                                    <!-- <file-pond name="test" ref="pond" label-idle="Drop files here..."
-                                                        v-bind:allow-multiple="true"
-                                                        accepted-file-types="image/jpeg, image/png" v-bind:files="myFiles"
-                                                        v-bind:server="MyServer" @addfile="onAddFile" /> -->
+
                                                     <span
                                                         class="  text-body-sm leading-5 tracking-wide text-brand_300 mb-4 ">
                                                         Supported
@@ -126,12 +123,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div
-                        class="absolute -left-12 top-0 text-gray_100 text-body-sm bg-brand_400 bg-opacity-60 px-8 text-start min-w-[240px] -rotate-45 overflow-hidden py-2 FONT-BOLD">
-                        &nbsp; &nbsp; Try For FREE </div> -->
                         </div>
-                        <!-- <div class="lg:h-[500px] h-[240px] w-full white bg-gray_700 rounded-lg animate-pulse" style="display: none;">
-                            </div> -->
                     </div>
 
                     <div class="flex items-center justify-between lg:space-x-4 space-x-2 overflow-x-auto pb-1">
@@ -205,6 +197,10 @@
         </div> -->
 
     </section>
+    <!-- <file-pond name="test" ref="pond" label-idle="Drop files here..." v-bind:allow-multiple="true"
+        accepted-file-types="image/jpeg, image/png" v-bind:files="myFiles" v-bind:server="MyServer" @addfile="onAddFile" /> -->
+
+    <ImageSlider/>
 
     <section class="streamline-outer">
         <div class="container">
@@ -317,12 +313,13 @@
     </section>
 </template>
 
-<script setup >
+<script setup>
 import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import axios from 'axios'
 import { ref } from 'vue';
 import FormData from 'form-data';
+import ImageSlider from './ImageSlider.vue'
 
 const fileInput = ref(null);
 const selectedImage = ref();
@@ -383,7 +380,6 @@ const breakpoints = {
     }
 }
 </script>
-
 
 <!-- <script>
 import axios from 'axios';
@@ -514,4 +510,6 @@ export default {
         FilePond,
     },
 };
+
+
 </script>
