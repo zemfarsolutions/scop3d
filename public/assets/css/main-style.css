@@ -1517,7 +1517,9 @@ section.estate-outer.price-guide {
    position: revert
 }
 
-
+.w-80 {
+   width: 80%;
+}
 
 
 
@@ -1559,9 +1561,9 @@ section.estate-outer.price-guide {
 }
 
 .filepond--item {
-   width: calc(25% - 0.5em);
-   max-height: 150px !important;
-   min-height: 150px !important;
+   width: calc(100% - 0.5em);
+   max-height: 500px !important;
+   min-height: 450px !important;
 }
 
 .filepond--credits {
