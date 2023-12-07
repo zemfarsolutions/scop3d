@@ -220,47 +220,49 @@ function generate() {
         });
     } else {
 
-        // window.sessionStorage.clear()
-        // let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
-        // let eta = 10;
-        // window.sessionStorage.setItem('order_id', order_id)
-        // window.sessionStorage.setItem('eta', eta)
+        window.sessionStorage.clear()
+        let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
+        let eta = 10;
+        window.sessionStorage.setItem('order_id', order_id)
+        window.sessionStorage.setItem('eta', eta)
+        countDown.value = eta;
+        show.value = true;
 
-        // show.value = true;
+        countDownTimer();
 
-        let data = {
-            "imageId": selectedImage.value,
-            "type": room_type.value,
-            "style": room_style.value,
-            "serviceName": "VS",
-            "regenerate": false
-        }
+        // let data = {
+        //     "imageId": selectedImage.value,
+        //     "type": room_type.value,
+        //     "style": room_style.value,
+        //     "serviceName": "VS",
+        //     "regenerate": false
+        // }
 
-        axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
-            data, {
-            headers: {
-                'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
-            }
-        })
-            .then((response) => {
+        // axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
+        //     data, {
+        //     headers: {
+        //         'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
+        //     }
+        // })
+        //     .then((response) => {
 
-                window.sessionStorage.clear()
+        //         window.sessionStorage.clear()
 
-                console.log("Order Id: " + response.data.orderId)
-                console.log("Time From Order: " + response.data.eta)
+        //         console.log("Order Id: " + response.data.orderId)
+        //         console.log("Time From Order: " + response.data.eta)
 
-                let eta = response.data.eta + 5;
+        //         let eta = response.data.eta + 5;
 
-                countDown.value = eta;
+        //         countDown.value = eta;
 
-                console.log("Estimated Time: " + eta)
+        //         console.log("Estimated Time: " + eta)
 
-                window.sessionStorage.setItem('order_id', response.data.orderId)
-                window.sessionStorage.setItem('eta', eta)
+        //         window.sessionStorage.setItem('order_id', response.data.orderId)
+        //         window.sessionStorage.setItem('eta', eta)
 
-                show.value = true;
-                countDownTimer();
-            })
+        //         show.value = true;
+        //         countDownTimer();
+        //     })
     }
 }
 </script>
