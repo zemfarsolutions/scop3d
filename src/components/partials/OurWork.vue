@@ -75,6 +75,231 @@
             </div>
         </div>
     </section>
+
+
+
+    <section id="our-work" class="potential-outer">
+        <div class="container">
+            <h2 class="title-outer" style="color:#fff;">Show the Potential of Every Property</h2>
+            <h3 class="sub-title">From Outdated to Outstanding with a Click</h3>
+            <p style="color:#fff; opacity: 0.7;">Don't let outdated interiors put off potential buyers. With Scop3D,
+                transform any space into a modern, appealing<br> haven. Show buyers the true potential of every property,
+                enhancing its value and appeal.</p>
+            <div id="uploader_section" class="uploader_section bg_cube">
+                <div class="nw-forminner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="nwfrm-tabs">
+                                <ul class="nav nav-pills" id="ai-category-pills" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link nwai-tab active" id="pills-interior-tab"
+                                            data-bs-toggle="pill" data-bs-target="#pills-interior" type="button" role="tab"
+                                            aria-controls="pills-interior" aria-selected="true"
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; loadRenders(0)">
+                                            <img class="ai-icon" src="/assets/images/interior-icon.svg" alt=""
+                                                loading="lazy">
+                                            <span class="nwtb-title">Interiors</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link nwai-tab" id="pills-exterior-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-exterior" type="button" role="tab"
+                                            aria-controls="pills-exterior" aria-selected="false"
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; loadRenders(1)">
+                                            <img class="ai-icon" src="/assets/images/exterior-icon.svg" alt=""
+                                                loading="lazy">
+                                            <span class="nwtb-title">Exteriors</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link nwai-tab" id="pills-garden-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-garden" type="button" role="tab"
+                                            aria-controls="pills-garden" aria-selected="false"
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; loadRenders(2)">
+                                            <img class="ai-icon" src="/assets/images/garden-icon.svg" alt="" loading="lazy">
+                                            <span class="nwtb-title">Gardens</span>
+                                        </button>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-interior" role="tabpanel"
+                                    aria-labelledby="pills-interior-tab">
+                                    <div class="nwfrm-contentouter" id="forminterior0">
+                                        <div class="row">
+                                            <div class="col-xl-8 col-lg-6 col-md-6 order-mobile-top">
+                                                <div class="step_1_video">
+                                                    <input type="hidden" name="image_type">
+                                                    <input type="hidden" name="image">
+                                                    <div class="ribon-bx">
+                                                        <img class="nwribon" src="/assets/images/ribon.png" alt=""
+                                                            loading="lazy">
+                                                        <div class="ribon-overlay">
+                                                            <img class="nwstepimg" src="/assets/images/fillvector.svg"
+                                                                loading="lazy">
+                                                            <span class="ribon-text"><strong>Step 1:</strong>
+                                                                Upload Image
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <file-pond 
+                                                name="test" 
+                                                ref="pond" 
+                                                label-idle='<img src="/assets/images/uploader-icon.svg" width="64" class="mb-4 file--pond--placeholder--img"> 
+                                                Drag & Drop your files or <span class="filepond--label-action"> Browse </span> 
+                                                <span class="placeholder--notice--filepond">Supported formats: JPG, JPEG, PNG, WEBP</span>'
+                                                accepted-file-types="image/jpeg, image/png" 
+                                                v-bind:files="myFiles"
+                                                v-bind:server="MyServer" 
+                                                @addfile="onAddFile" 
+                                                maxFiles="1" 
+                                                />
+
+                                                <div v-if="selectedImage !== ''" class="mt-4">
+                                                    <button class="btn upgd-go" type="button"
+                                                        @click="generate()">Generate</button>
+                                                </div>
+
+                                                <div class="mt-4" v-if="show">
+
+                                                    <div v-if="countDown > 0" class="d-flex justify-content-center">
+                                                        <span class="ribon-text">
+                                                            <div class="dot-spin"></div> <span class="d-none"> {{ countDown
+                                                            }}</span>
+                                                        </span>
+                                                    </div>
+
+                                                    <Suspense>
+                                                        <template #default>
+                                                            <ViewImages />
+                                                        </template>
+                                                        <template #fallback>
+                                                            <div class="skeleton-loader">
+                                                                <div class="wrapper">
+                                                                    <div class="card">
+                                                                        <div class="card__img skeleton"></div>
+                                                                    </div>
+
+                                                                    <div class="card">
+                                                                        <div class="card__img skeleton"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </template>
+                                                    </Suspense>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xl-4 col-lg-6 col-md-6 order-mobile-btm">
+                                                <div class="nwfile-uploadside">
+                                                    <form
+                                                        style="background: transparent; box-shadow: none; backdrop-filter: none; border-radius: 0;">
+                                                        <div class="nwchoose-options">
+                                                            <div class="ribon-bx">
+                                                                <img class="nwribon" src="/assets/images/ribon.png"
+                                                                    loading="lazy">
+                                                                <div class="ribon-overlay">
+                                                                    <img class="nwstepimg"
+                                                                        src="/assets/images/upload-vector.svg"
+                                                                        loading="lazy">
+                                                                    <span class="ribon-text"><strong>Step 2:</strong>
+                                                                        Customize
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-md-12 p-0">
+                                                                    <div class="nwchoosebx">
+                                                                        <label class="nwfile-tiTle">Room Type<span
+                                                                                class="tooltipnew"
+                                                                                data-tooltip="Choose the type of room
+                                                                                layout you uploaded. If you are uploading an image with a
+                                                                                living room, choose living room. If you want to transform
+                                                                                that living room to kitchen, choose kitchen.">?</span></label>
+                                                                        <div
+                                                                            class="radio-tile-group nwchoosebx_radio-tile-group">
+                                                                            <div class="input-container"
+                                                                                v-for="(type, index) in types" :key="index">
+                                                                                <input id="walk" class="radio-button"
+                                                                                type="radio" v-model="room_type"
+                                                                                    :value="type.name" name="radio">
+                                                                                <div class="radio-tile">
+                                                                                    <div class="icon walk-icon">
+                                                                                        <!-- <img src="/public/assets/images/output-onlinepngtools.png"> -->
+                                                                                        <img :src="type.image">
+                                                                                    </div>
+                                                                                    <label for="walk"
+                                                                                        class="radio-tile-label">{{
+                                                                                            type.name }}</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-md-12 p-0">
+                                                                    <div class="nwchoosebx">
+                                                                        <label class="nwfile-tiTle">Room Style
+                                                                            <span class="tooltipnew"
+                                                                                data-tooltip="Control the the style of your room.">?</span></label>
+                                                                        <div class="nwchoosebx_radio-tile-group">
+                                                                            <div v-for="(style, index) in styles"
+                                                                                :key="index">
+                                                                                <input type="radio" v-model="room_style"
+                                                                                    :value="style.name" name="room_style"
+                                                                                    class="btn-check"
+                                                                                    :id="`btn-check` + index"
+                                                                                    autocomplete="off">
+                                                                                <label
+                                                                                    class="btn btn-outline-light room_style"
+                                                                                    :for="`btn-check` + index">{{ style.name
+                                                                                    }}</label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="nwupload-b0x">
+                                                            <div class="ribon-bx">
+                                                                <img class="nwribon" src="/assets/images/ribon.png"
+                                                                    loading="lazy">
+                                                                <div class="ribon-overlay">
+                                                                    <img class="nwstepimg"
+                                                                        src="/assets/images/generatevector.svg"
+                                                                        loading="lazy">
+                                                                    <span class="ribon-text"><strong>Step 3:</strong>
+                                                                        Generate</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <!-- <button class="nwfrm-submit _btn_gndeisgn" >Generate </button> -->
+                                                    <button class="btn generate-go" type="button"
+                                                        @click="generate()">Generate</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-exterior" role="tabpanel"
+                                    aria-labelledby="pills-exterior-tab">
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-garden" role="tabpanel"
+                                    aria-labelledby="pills-garden-tab">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -173,7 +398,7 @@ const styles = [
         name: 'Farmhouse'
     },
     {
-        name: 'UrbanIndustrial'
+        name: 'Urban Industrial'
     },
     {
         name: 'Traditional'
@@ -182,19 +407,24 @@ const styles = [
 
 const types = [
     {
-        name: 'Bedroom'
+        name: 'Bedroom',
+        image: '/assets/images/bedroom_1.svg'
     },
     {
-        name: 'LivingRoom'
+        name: 'Livingroom',
+        image: '/assets/images/livingroom.svg'
     },
     {
-        name: 'DiningRoom'
+        name: 'Dining Room',
+        image: '/assets/images/dining-set.svg'
     },
     {
-        name: 'HomeOffice'
+        name: 'Home Office',
+        image: '/assets/images/office-business.svg'
     },
     {
-        name: 'SingleBedroom'
+        name: 'Single Room',
+        image: '/assets/images/bedroom_2.svg'
     }
 ]
 
@@ -268,25 +498,25 @@ function generate() {
 </script>
 
 <style scoped>
-.radio-tile-group {
+.nwchoosebx_radio-tile-group {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-content: center;
     align-items: center;
+    gap: 5px;
 }
 
-.f-2 {
-    font-size: 0.45rem
-}
-
-.radio-tile-group .input-container {
+.nwchoosebx_radio-tile-group .input-container {
     position: relative;
-    height: 80px;
-    width: 120px;
-    margin: 0.5rem;
+    /* height: 80px; */
+    width: 49%;
+    /* width: 120px; */
+    /* margin: 0.5rem; */
 }
 
-.radio-tile-group .input-container .radio-button {
+.nwchoosebx_radio-tile-group .input-container .radio-button {
     opacity: 0;
     position: absolute;
     top: 0;
@@ -297,50 +527,59 @@ function generate() {
     cursor: pointer;
 }
 
-.radio-tile-group .input-container .radio-tile {
+.nwchoosebx_radio-tile-group .input-container .radio-tile {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 5px;
     width: 100%;
-    height: 100%;
-    border: 2px solid #ffffff;
+    /* height: 100%; */
+    border: 1px solid #ffffff;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 0.375rem 0.75rem;
     transition: transform 300ms ease;
 }
 
-.radio-tile-group .input-container .icon img {
-    fill: #ffffff;
-    width: 2rem;
-    height: 2rem;
+.nwchoosebx_radio-tile-group .input-container .walk-icon {
+    width: 1rem;
+    /* height: 1rem; */
 }
 
-.radio-tile-group .input-container .radio-tile-label {
+.nwchoosebx_radio-tile-group .input-container .icon img {
+    filter: invert(1);
+    width: 100%;
+    height: 100%;
+
+}
+
+.nwchoosebx_radio-tile-group .input-container .radio-tile-label {
     text-align: center;
     font-size: 12px;
     font-weight: 400;
     text-transform: capitalize;
     color: #ffffff;
-    line-height: 1.6em;
-    margin-top: 5px;
+    /* line-height: 1.6em; */
+    /* margin-top: 5px; */
 }
 
-.radio-tile-group .input-container .radio-button:checked+.radio-tile {
-    background-color: #097a78;
-    border: 2px solid #097a78;
+.nwchoosebx_radio-tile-group .input-container .radio-button:checked+.radio-tile {
+    background-color: #01413E;
+    border: 2px solid #01413E;
     color: white;
-    transform: scale(1.1, 1.1);
+    /* transform: scale(1.1, 1.1); */
 }
 
-.radio-tile-group .input-container .radio-button:checked+.radio-tile .icon svg {
+.nwchoosebx_radio-tile-group .input-container .radio-button:checked+.radio-tile .icon svg {
     fill: white;
     background-color: #097a78;
 }
 
-.radio-tile-group .input-container .radio-button:checked+.radio-tile .radio-tile-label {
+.nwchoosebx_radio-tile-group .input-container .radio-button:checked+.radio-tile .radio-tile-label {
     color: white;
-    background-color: #097a78;
+    background-color: #01413E;
 }
 
 /* .chosen--images {
@@ -390,6 +629,60 @@ function generate() {
     }
 }
 
+
+/**
+ * ==============================================
+ * Dot Spin
+ * ==============================================
+ */
+.dot-spin {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: transparent;
+    box-shadow: 0 -18px 0 0 #01413E, 12.727926px -12.727926px 0 0 #01413E, 18px 0 0 0 #01413E, 12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0), 0 18px 0 0 rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0), -18px 0 0 0 rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 0 rgba(152, 128, 255, 0);
+    animation: dot-spin 1.5s infinite linear;
+}
+
+@keyframes dot-spin {
+
+    0%,
+    100% {
+        box-shadow: 0 -18px 0 0 #01413E, 12.727926px -12.727926px 0 0 #01413E, 18px 0 0 0 #01413E, 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+    }
+
+    12.5% {
+        box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 0 #01413E, 18px 0 0 0 #01413E, 12.727926px 12.727926px 0 0 #01413E, 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+    }
+
+    25% {
+        box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 0 #01413E, 12.727926px 12.727926px 0 0 #01413E, 0 18px 0 0 #01413E, -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+    }
+
+    37.5% {
+        box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 0 #01413E, 0 18px 0 0 #01413E, -12.727926px 12.727926px 0 0 #01413E, -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+    }
+
+    50% {
+        box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 0 #01413E, -12.727926px 12.727926px 0 0 #01413E, -18px 0 0 0 #01413E, -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+    }
+
+    62.5% {
+        box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 0 #01413E, -18px 0 0 0 #01413E, -12.727926px -12.727926px 0 0 #01413E;
+    }
+
+    75% {
+        box-shadow: 0 -18px 0 0 #01413E, 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 0 #01413E, -12.727926px -12.727926px 0 0 #01413E;
+    }
+
+    87.5% {
+        box-shadow: 0 -18px 0 0 #01413E, 12.727926px -12.727926px 0 0 #01413E, 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 0 #01413E;
+    }
+}
+
+
 .card {
     --card-radius: 6px;
     min-width: 300px;
@@ -429,5 +722,4 @@ function generate() {
 .card__body>.card__text:last-child {
     margin-bottom: 0.25rem;
     width: 66%;
-}
-</style>
+}</style>

@@ -385,6 +385,27 @@
       display: inline-flex;
    }
 
+   .generate-go {
+      padding: 15px 45px;
+      border: 0;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 28px;
+      background: #fff;
+      color: #077A76;
+      transition: ease .2s;
+      text-transform: uppercase;
+      width: 100%;
+      border: 1px solid transparent;
+   }
+
+   .generate-go:hover {
+      color: #fff;
+      background: #01413e;
+      border: 1px solid #077A76;
+   }
+
    .hmd-navflx {
       display: flex;
       align-items: center
@@ -3063,9 +3084,36 @@
    }
 
    .nw-forminner {
-      background-image: linear-gradient(215deg, hsl(255deg 87% 9%) 0%, hsl(257deg 88% 8%) 8%, hsl(258deg 88% 7%) 13%, hsl(258deg 89% 6%) 18%, hsl(257deg 90% 5%) 24%, hsl(254deg 91% 5%) 33%, hsl(255deg 92% 5%) 44%, hsl(255deg 93% 5%) 57%, hsl(255deg 93% 6%) 70%, hsl(255deg 94% 6%) 85%, hsl(254deg 94% 6%) 100%);
+      /* background-image: linear-gradient(215deg, hsl(255deg 87% 9%) 0%, hsl(257deg 88% 8%) 8%, hsl(258deg 88% 7%) 13%, hsl(258deg 89% 6%) 18%, hsl(257deg 90% 5%) 24%, hsl(254deg 91% 5%) 33%, hsl(255deg 92% 5%) 44%, hsl(255deg 93% 5%) 57%, hsl(255deg 93% 6%) 70%, hsl(255deg 94% 6%) 85%, hsl(254deg 94% 6%) 100%); */
       border-radius: 15px;
-      padding: 36px 0 44px
+      padding: 36px 0 44px;
+      /* box-shadow: 0px -1px 13px 1px rgba(0, 0, 0, .05);
+      background: rgb(7, 122, 118, 0.6);
+      backdrop-filter: blur(10px); */
+      backdrop-filter: blur(10px);
+      box-shadow: 0px -1px 13px 1px rgba(0, 0, 0, .05);
+      background-color: rgb(7, 122, 118, 0.4);
+   }
+
+   .bg_cube {
+      position: relative;
+   }
+   .bg_cube:before {
+      content: "";
+      background: url(../images/square01.png) no-repeat top center;
+      display: block;
+      position: absolute;
+      bottom: -40px;
+      left: -60px;
+      width: 187px;
+      height: 186px;
+   }
+
+   .nwfile-uploadside {
+      padding: 23px 20px;
+      border-radius: 8px;
+      height: 100%;
+      background: #077A76;
    }
 
    .nwfrm-heading {
@@ -3089,17 +3137,24 @@
 
    .nwai-tab {
       padding: 14px 55px 18px 20px;
-      border-radius: 16px !important;
+      border-radius: 5px !important;
       display: flex;
       align-items: center;
       max-height: 89px;
       border: none !important;
       max-width: 233px;
-      background: #18122a8a !important
+      background: #01413e !important;
    }
 
    .nwai-tab:hover {
-      background: #7155e5 !important;
+      background: #01413e81 !important;
+      border: 1px solid;
+      transition: .9s
+   }
+
+   .nwai-tab.active {
+      background: #01413e81 !important;
+      border: 1px solid;
       transition: .9s
    }
 
@@ -3196,13 +3251,6 @@
       transition: all .5s
    }
 
-   .nwfile-uploadside {
-      padding: 23px 20px;
-      background: #18122a;
-      border-radius: 8px;
-      height: 100%
-   }
-
    .ribon-text {
       font-size: 14px;
       color: #fff;
@@ -3281,8 +3329,10 @@
       font-size: 14px;
       line-height: 24px;
       letter-spacing: -.01em;
-      color: rgba(239, 239, 239, .81);
-      margin-bottom: 4px
+      color: #fff;
+      margin-bottom: 5px;
+      text-align: left;
+      width: 100%;
    }
 
    .nwfiles-optns {
@@ -3292,7 +3342,7 @@
       padding: 12px;
       outline: none;
       margin-bottom: 10px;
-      border: 1px solid #352c52;
+      border: 1px solid #01413e;
       border-radius: 7px;
       font-style: normal;
       font-weight: 500;
@@ -3302,7 +3352,7 @@
       color: #fff;
       position: relative;
       text-align: left;
-      background-color: #41326a;
+      background-color: #01413e;
       padding: 10px;
       padding-right: 30px;
       -moz-appearance: none;
@@ -5879,7 +5929,7 @@
    }
 
    .tooltipnew {
-      background-color: #077A76;
+      background-color: #01413e;
       color: #fff;
       padding: 1px 5px;
       border-radius: 100px;
@@ -8406,4 +8456,8 @@
       font-size: 18px;
       margin-bottom: 10px;
       text-align: center
+   }
+
+   label.room_style {
+      font-size: 12px;
    }
