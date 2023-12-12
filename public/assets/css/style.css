@@ -3129,7 +3129,7 @@
    .nwtb-title {
       font-style: normal;
       font-weight: 700;
-      font-size: 19px;
+      font-size: 16px;
       text-transform: capitalize;
       color: #fff;
       margin-left: 16px
@@ -3170,7 +3170,8 @@
       max-width: 890px;
       margin: auto !important;
       display: flex;
-      justify-content: space-between
+      justify-content: space-around;
+      row-gap: 10px;
    }
 
    .nwfrm-tabs {

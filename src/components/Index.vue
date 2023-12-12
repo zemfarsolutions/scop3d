@@ -1,7 +1,7 @@
 <template>
     <Banner />
     <About />
-    <OurWork />
+    <AIServices />
     <ImageSlider />
     <Streamline />
     <Estate />
@@ -18,6 +18,6 @@ import Estate from './partials/Estate.vue'
 import Streamline from './partials/Streamline.vue'
 import About from './partials/About.vue'
 import ImageSlider from './ImageSlider.vue'
-import OurWork from './partials/OurWork.vue'
+import AIServices from './partials/AIServices.vue'
 
 </script>
