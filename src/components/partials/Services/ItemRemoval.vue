@@ -62,66 +62,12 @@
             <div class="col-xl-4 col-lg-6 col-md-6 order-mobile-btm">
                 <div class="nwfile-uploadside">
                     <form style="background: transparent; box-shadow: none; backdrop-filter: none; border-radius: 0;">
-                        <div class="nwchoose-options">
-                            <div class="ribon-bx">
-                                <img class="nwribon" src="/assets/images/ribon.png" loading="lazy">
-                                <div class="ribon-overlay">
-                                    <img class="nwstepimg" src="/assets/images/upload-vector.svg" loading="lazy">
-                                    <span class="ribon-text"><strong>Step 2:</strong>
-                                        Customize
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 col-md-12 p-0">
-                                    <div class="nwchoosebx">
-                                        <label class="nwfile-tiTle">Room Type<span class="tooltipnew"
-                                                data-tooltip="Choose the type of room
-                                                                                layout you uploaded. If you are uploading an image with a
-                                                                                living room, choose living room. If you want to transform
-                                                                                that living room to kitchen, choose kitchen.">?</span></label>
-                                        <div class="radio-tile-group nwchoosebx_radio-tile-group">
-                                            <div class="input-container" v-for="(type, index) in virtual_types"
-                                                :key="index">
-                                                <input id="walk" class="radio-button" type="radio" v-model="room_type"
-                                                    :value="type.name" name="radio">
-                                                <div class="radio-tile">
-                                                    <div class="icon walk-icon">
-                                                        <!-- <img src="/public/assets/images/output-onlinepngtools.png"> -->
-                                                        <img :src="type.image">
-                                                    </div>
-                                                    <label for="walk" class="radio-tile-label">{{
-                                                        type.name }}</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-md-12 p-0">
-                                    <div class="nwchoosebx">
-                                        <label class="nwfile-tiTle">Room Style
-                                            <span class="tooltipnew"
-                                                data-tooltip="Control the the style of your room.">?</span></label>
-                                        <div class="nwchoosebx_radio-tile-group">
-                                            <div v-for="(style, index) in virtual_styles" :key="index">
-                                                <input type="radio" v-model="room_style" :value="style.name"
-                                                    name="room_style" class="btn-check" :id="`btn-check` + index"
-                                                    autocomplete="off">
-                                                <label class="btn btn-outline-light room_style"
-                                                    :for="`btn-check` + index">{{ style.name
-                                                    }}</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="nwupload-b0x">
                             <div class="ribon-bx">
                                 <img class="nwribon" src="/assets/images/ribon.png" loading="lazy">
                                 <div class="ribon-overlay">
                                     <img class="nwstepimg" src="/assets/images/generatevector.svg" loading="lazy">
-                                    <span class="ribon-text"><strong>Step 3:</strong>
+                                    <span class="ribon-text"><strong>Step 2:</strong>
                                         Generate</span>
                                 </div>
                             </div>
@@ -158,7 +104,7 @@ const FilePond = vueFilePond(
     FilePondPluginImagePreview
 );
 
-const selectedImage = ref('');
+const selectedImage = ref(null);
 
 export default {
     name: "app",
@@ -185,7 +131,7 @@ export default {
                     onerror: (response) => console.log(response.src),
                     ondata: (formData) => {
                         formData.append('image', this.$refs.pond.getFiles()[0].file);
-                        formData.append('serviceName', 'VS');
+                        formData.append('serviceName', 'AUTOIR');
                         return formData;
                     },
                 },
@@ -210,130 +156,7 @@ const ViewImages = defineAsyncComponent({
 })
 
 const show = ref(false);
-const room_type = ref(null);
-const room_style = ref(null);
 const countDown = ref();
-const interior_type = ref("Bedroom");
-const interior_color = ref("SnowWhite");
-
-const virtual_styles = [
-    {
-        name: 'Modern'
-    },
-    {
-        name: 'Hampton'
-    },
-    {
-        name: 'Contemporary'
-    },
-    {
-        name: 'Scandinavian'
-    },
-    {
-        name: 'Farmhouse'
-    },
-    {
-        name: 'Urban Industrial'
-    },
-    {
-        name: 'Traditional'
-    }
-];
-
-const virtual_types = [
-    {
-        name: 'Bedroom',
-        image: '/assets/images/bedroom_1.svg'
-    },
-    {
-        name: 'Livingroom',
-        image: '/assets/images/livingroom.svg'
-    },
-    {
-        name: 'Dining Room',
-        image: '/assets/images/dining-set.svg'
-    },
-    {
-        name: 'Home Office',
-        image: '/assets/images/office-business.svg'
-    },
-    {
-        name: 'Single Room',
-        image: '/assets/images/bedroom_2.svg'
-    }
-];
-
-const interior_types = [{
-    name: "Bedroom"
-}, {
-    name: "LivingRoom"
-}, {
-    name: "DiningRoom"
-}, {
-    name: "Office"
-}, {
-    name: "Outdoor"
-}, {
-    name: "Bathroom"
-}, {
-    name: "Kitchen"
-}, {
-    name: "KidsRoom"
-}, {
-    name: "GuestRoom"
-}, {
-    name: "GameRoom"
-}, {
-    name: "LaundryRoom"
-}, {
-    name: "Basement"
-}, {
-    name: "HotelRoom"
-}, {
-    name: "HotelLobby"
-}, {
-    name: "CarGarage"
-}, {
-    name: "OutdoorPatio"
-}, {
-    name: "OutdoorGarden"
-}, {
-    name: "HomeGym"
-}, {
-    name: "WineCellar"
-}, {
-    name: "OutdoorPoolArea"
-}, {
-    name: "Walk-inCloset"
-}, {
-    name: "ExhibitionSpace"
-}, {
-    name: "ClothingStore"
-}, {
-    name: "CoffeeShop"
-}];
-
-const interior_styles = [{
-    name: "Modern"
-}, {
-    name: "Hampton"
-}, {
-    name: "Contemporary"
-}, {
-    name: "Scandinavian"
-}, {
-    name: "Farmhouse"
-}, {
-    name: "UrbanIndustrial"
-}, {
-    name: "Traditional"
-}, {
-    name: "Diwali"
-}, {
-    name: "Christmas"
-}];
-
-const interior_colors = ["SnowWhite", "SoftNeutrals", "CoastalCalm", "CrispWinter", "SeaBreeze", "RocketPop", "CottonCandy", "70sRetro", "ForestGetaway", "CandyShop", "NaturalGreen", "DeepBlues", "MinimalistMonochrome", "EarthyNeutrals", "PastelCalm", "CoolGreys", "PeachFuzz2024"];
 
 function countDownTimer() {
     console.log('Timer...')
@@ -348,58 +171,53 @@ function countDownTimer() {
 function generate() {
 
     console.log(selectedImage.value)
-    console.log(room_style.value)
-    console.log(room_type.value)
 
-    if (room_style.value == null || room_type.value == null) {
-        toast("Please, Room Style and Type.", {
+    if (selectedImage.value == null) {
+        toast("Please, Select an Image", {
             autoClose: 1000,
         });
     } else {
 
-        window.sessionStorage.clear()
-        let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
-        let eta = 10;
-        window.sessionStorage.setItem('order_id', order_id)
-        window.sessionStorage.setItem('eta', eta)
-        countDown.value = eta;
-        show.value = true;
+        // window.sessionStorage.clear()
+        // let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
+        // let eta = 10;
+        // window.sessionStorage.setItem('order_id', order_id)
+        // window.sessionStorage.setItem('eta', eta)
+        // countDown.value = eta;
+        // show.value = true;
 
-        countDownTimer();
+        // countDownTimer();
 
-        // let data = {
-        //     "imageId": selectedImage.value,
-        //     "type": room_type.value,
-        //     "style": room_style.value,
-        //     "serviceName": "VS",
-        //     "regenerate": false
-        // }
+        let data = {
+            "imageId": selectedImage.value,
+            "serviceName": "AUTOIR",
+        }
 
-        // axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
-        //     data, {
-        //     headers: {
-        //         'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
-        //     }
-        // })
-        //     .then((response) => {
+        axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
+            data, {
+            headers: {
+                'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
+            }
+        })
+            .then((response) => {
 
-        //         window.sessionStorage.clear()
+                window.sessionStorage.clear()
 
-        //         console.log("Order Id: " + response.data.orderId)
-        //         console.log("Time From Order: " + response.data.eta)
+                console.log("Order Id: " + response.data.orderId)
+                console.log("Time From Order: " + response.data.eta)
 
-        //         let eta = response.data.eta + 5;
+                let eta = response.data.eta + 5;
 
-        //         countDown.value = eta;
+                countDown.value = eta;
 
-        //         console.log("Estimated Time: " + eta)
+                console.log("Estimated Time: " + eta)
 
-        //         window.sessionStorage.setItem('order_id', response.data.orderId)
-        //         window.sessionStorage.setItem('eta', eta)
+                window.sessionStorage.setItem('order_id', response.data.orderId)
+                window.sessionStorage.setItem('eta', eta)
 
-        //         show.value = true;
-        //         countDownTimer();
-        //     })
+                show.value = true;
+                countDownTimer();
+            })
     }
 }
 </script>

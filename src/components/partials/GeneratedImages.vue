@@ -21,23 +21,23 @@ const loadImages = async () => {
             axios.get('https://api.scop3d.com/api/get-generated-image/' + order_id)
                 .then(function (response) {
 
-                    console.log('aaaaaaaaaaa')
-                    let obj = {
-                        "generated_images": [
-                            {
-                                "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
-                            },
-                            {
-                                "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
-                            },
-                            {
-                                "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
-                            }
-                        ]
-                    };
+                    console.log('Generated Images Here..')
+                    // let obj = {
+                    //     "generated_images": [
+                    //         {
+                    //             "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
+                    //         },
+                    //         {
+                    //             "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
+                    //         },
+                    //         {
+                    //             "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
+                    //         }
+                    //     ]
+                    // };
 
                     resolve(
-                        obj
+                        response.data
                     )
                 })
 

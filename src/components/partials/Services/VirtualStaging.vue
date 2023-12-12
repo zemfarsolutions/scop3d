@@ -158,7 +158,7 @@ const FilePond = vueFilePond(
     FilePondPluginImagePreview
 );
 
-const selectedImage = ref('');
+const selectedImage = ref(null);
 
 export default {
     name: "app",
@@ -213,8 +213,6 @@ const show = ref(false);
 const room_type = ref(null);
 const room_style = ref(null);
 const countDown = ref();
-const interior_type = ref("Bedroom");
-const interior_color = ref("SnowWhite");
 
 const virtual_styles = [
     {
@@ -233,107 +231,34 @@ const virtual_styles = [
         name: 'Farmhouse'
     },
     {
-        name: 'Urban Industrial'
+        name: 'UrbanIndustrial'
     },
     {
         name: 'Traditional'
     }
 ];
-
 const virtual_types = [
     {
         name: 'Bedroom',
         image: '/assets/images/bedroom_1.svg'
     },
     {
-        name: 'Livingroom',
+        name: 'LivingRoom',
         image: '/assets/images/livingroom.svg'
     },
     {
-        name: 'Dining Room',
+        name: 'DiningRoom',
         image: '/assets/images/dining-set.svg'
     },
     {
-        name: 'Home Office',
+        name: 'HomeOffice',
         image: '/assets/images/office-business.svg'
     },
     {
-        name: 'Single Room',
+        name: 'SingleBedroom',
         image: '/assets/images/bedroom_2.svg'
     }
 ];
-
-const interior_types = [{
-    name: "Bedroom"
-}, {
-    name: "LivingRoom"
-}, {
-    name: "DiningRoom"
-}, {
-    name: "Office"
-}, {
-    name: "Outdoor"
-}, {
-    name: "Bathroom"
-}, {
-    name: "Kitchen"
-}, {
-    name: "KidsRoom"
-}, {
-    name: "GuestRoom"
-}, {
-    name: "GameRoom"
-}, {
-    name: "LaundryRoom"
-}, {
-    name: "Basement"
-}, {
-    name: "HotelRoom"
-}, {
-    name: "HotelLobby"
-}, {
-    name: "CarGarage"
-}, {
-    name: "OutdoorPatio"
-}, {
-    name: "OutdoorGarden"
-}, {
-    name: "HomeGym"
-}, {
-    name: "WineCellar"
-}, {
-    name: "OutdoorPoolArea"
-}, {
-    name: "Walk-inCloset"
-}, {
-    name: "ExhibitionSpace"
-}, {
-    name: "ClothingStore"
-}, {
-    name: "CoffeeShop"
-}];
-
-const interior_styles = [{
-    name: "Modern"
-}, {
-    name: "Hampton"
-}, {
-    name: "Contemporary"
-}, {
-    name: "Scandinavian"
-}, {
-    name: "Farmhouse"
-}, {
-    name: "UrbanIndustrial"
-}, {
-    name: "Traditional"
-}, {
-    name: "Diwali"
-}, {
-    name: "Christmas"
-}];
-
-const interior_colors = ["SnowWhite", "SoftNeutrals", "CoastalCalm", "CrispWinter", "SeaBreeze", "RocketPop", "CottonCandy", "70sRetro", "ForestGetaway", "CandyShop", "NaturalGreen", "DeepBlues", "MinimalistMonochrome", "EarthyNeutrals", "PastelCalm", "CoolGreys", "PeachFuzz2024"];
 
 function countDownTimer() {
     console.log('Timer...')
@@ -355,51 +280,55 @@ function generate() {
         toast("Please, Room Style and Type.", {
             autoClose: 1000,
         });
+    } else if (selectedImage.value == null) {
+        toast("Please, Select an Image.", {
+            autoClose: 1000,
+        });
     } else {
 
-        window.sessionStorage.clear()
-        let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
-        let eta = 10;
-        window.sessionStorage.setItem('order_id', order_id)
-        window.sessionStorage.setItem('eta', eta)
-        countDown.value = eta;
-        show.value = true;
+        // window.sessionStorage.clear()
+        // let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
+        // let eta = 10;
+        // window.sessionStorage.setItem('order_id', order_id)
+        // window.sessionStorage.setItem('eta', eta)
+        // countDown.value = eta;
+        // show.value = true;
 
-        countDownTimer();
+        // countDownTimer();
 
-        // let data = {
-        //     "imageId": selectedImage.value,
-        //     "type": room_type.value,
-        //     "style": room_style.value,
-        //     "serviceName": "VS",
-        //     "regenerate": false
-        // }
+        let data = {
+            "imageId": selectedImage.value,
+            "type": room_type.value,
+            "style": room_style.value,
+            "serviceName": "VS",
+            "regenerate": false
+        }
 
-        // axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
-        //     data, {
-        //     headers: {
-        //         'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
-        //     }
-        // })
-        //     .then((response) => {
+        axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
+            data, {
+            headers: {
+                'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
+            }
+        })
+            .then((response) => {
 
-        //         window.sessionStorage.clear()
+                window.sessionStorage.clear()
 
-        //         console.log("Order Id: " + response.data.orderId)
-        //         console.log("Time From Order: " + response.data.eta)
+                console.log("Order Id: " + response.data.orderId)
+                console.log("Time From Order: " + response.data.eta)
 
-        //         let eta = response.data.eta + 5;
+                let eta = response.data.eta + 5;
 
-        //         countDown.value = eta;
+                countDown.value = eta;
 
-        //         console.log("Estimated Time: " + eta)
+                console.log("Estimated Time: " + eta)
 
-        //         window.sessionStorage.setItem('order_id', response.data.orderId)
-        //         window.sessionStorage.setItem('eta', eta)
+                window.sessionStorage.setItem('order_id', response.data.orderId)
+                window.sessionStorage.setItem('eta', eta)
 
-        //         show.value = true;
-        //         countDownTimer();
-        //     })
+                show.value = true;
+                countDownTimer();
+            })
     }
 }
 </script>

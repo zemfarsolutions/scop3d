@@ -97,11 +97,11 @@
                                                 data-tooltip="Control the the style of your room.">?</span></label>
                                         <div class="nwchoosebx_radio-tile-group">
                                             <div v-for="(style, index) in interior_styles" :key="index">
-                                                <input type="radio" v-model="room_style" :value="style.name"
-                                                    name="room_style" class="btn-check" :id="`btn-check` + index"
+                                                <input type="radio" v-model="interior_style" :value="style.name"
+                                                    name="room_style" class="btn-check" :id="`btn-check` + style.id"
                                                     autocomplete="off">
                                                 <label class="btn btn-outline-light room_style"
-                                                    :for="`btn-check` + index">{{ style.name
+                                                    :for="`btn-check` + style.id">{{ style.name
                                                     }}</label>
                                             </div>
                                         </div>
@@ -198,7 +198,7 @@ export default {
                     onerror: (response) => console.log(response.src),
                     ondata: (formData) => {
                         formData.append('image', this.$refs.pond.getFiles()[0].file);
-                        formData.append('serviceName', 'VS');
+                        formData.append('serviceName', 'ID');
                         return formData;
                     },
                 },
@@ -223,58 +223,10 @@ const ViewImages = defineAsyncComponent({
 })
 
 const show = ref(false);
-const room_type = ref(null);
-const room_style = ref(null);
 const countDown = ref();
 const interior_type = ref("Bedroom");
+const interior_style = ref(null);
 const interior_color = ref("SnowWhite");
-
-const virtual_styles = [
-    {
-        name: 'Modern'
-    },
-    {
-        name: 'Hampton'
-    },
-    {
-        name: 'Contemporary'
-    },
-    {
-        name: 'Scandinavian'
-    },
-    {
-        name: 'Farmhouse'
-    },
-    {
-        name: 'Urban Industrial'
-    },
-    {
-        name: 'Traditional'
-    }
-];
-
-const virtual_types = [
-    {
-        name: 'Bedroom',
-        image: '/assets/images/bedroom_1.svg'
-    },
-    {
-        name: 'Livingroom',
-        image: '/assets/images/livingroom.svg'
-    },
-    {
-        name: 'Dining Room',
-        image: '/assets/images/dining-set.svg'
-    },
-    {
-        name: 'Home Office',
-        image: '/assets/images/office-business.svg'
-    },
-    {
-        name: 'Single Room',
-        image: '/assets/images/bedroom_2.svg'
-    }
-];
 
 const interior_types = [{
     name: "Bedroom"
@@ -327,23 +279,32 @@ const interior_types = [{
 }];
 
 const interior_styles = [{
-    name: "Modern"
+    name: "Modern",
+    id: 12
 }, {
-    name: "Hampton"
+    name: "Hampton",
+    id: 13
 }, {
-    name: "Contemporary"
+    name: "Contemporary",
+    id: 14
 }, {
-    name: "Scandinavian"
+    name: "Scandinavian",
+    id: 15
 }, {
-    name: "Farmhouse"
+    name: "Farmhouse",
+    id: 16
 }, {
-    name: "UrbanIndustrial"
+    name: "UrbanIndustrial",
+    id: 17
 }, {
-    name: "Traditional"
+    name: "Traditional",
+    id: 18
 }, {
-    name: "Diwali"
+    name: "Diwali",
+    id: 19
 }, {
-    name: "Christmas"
+    name: "Christmas",
+    id: 20
 }];
 
 const interior_colors = ["SnowWhite", "SoftNeutrals", "CoastalCalm", "CrispWinter", "SeaBreeze", "RocketPop", "CottonCandy", "70sRetro", "ForestGetaway", "CandyShop", "NaturalGreen", "DeepBlues", "MinimalistMonochrome", "EarthyNeutrals", "PastelCalm", "CoolGreys", "PeachFuzz2024"];
@@ -361,58 +322,60 @@ function countDownTimer() {
 function generate() {
 
     console.log(selectedImage.value)
-    console.log(room_style.value)
-    console.log(room_type.value)
+    console.log(interior_style.value)
+    console.log(interior_type.value)
+    console.log(interior_color.value)
 
-    if (room_style.value == null || room_type.value == null) {
-        toast("Please, Room Style and Type.", {
+    if (interior_style.value == null || interior_type.value == null) {
+        toast("Please, Select Room Style.", {
             autoClose: 1000,
         });
     } else {
 
-        window.sessionStorage.clear()
-        let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
-        let eta = 10;
-        window.sessionStorage.setItem('order_id', order_id)
-        window.sessionStorage.setItem('eta', eta)
-        countDown.value = eta;
-        show.value = true;
+        // window.sessionStorage.clear()
+        // let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
+        // let eta = 10;
+        // window.sessionStorage.setItem('order_id', order_id)
+        // window.sessionStorage.setItem('eta', eta)
+        // countDown.value = eta;
+        // show.value = true;
 
-        countDownTimer();
+        // countDownTimer();
 
-        // let data = {
-        //     "imageId": selectedImage.value,
-        //     "type": room_type.value,
-        //     "style": room_style.value,
-        //     "serviceName": "VS",
-        //     "regenerate": false
-        // }
+        let data = {
+            "imageId": selectedImage.value,
+            "type": interior_type.value,
+            "style": interior_style.value,
+            "serviceName": "ID",
+            "colorPalette": interior_color.value,
+            "regenerate": false
+        }
 
-        // axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
-        //     data, {
-        //     headers: {
-        //         'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
-        //     }
-        // })
-        //     .then((response) => {
+        axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
+            data, {
+            headers: {
+                'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
+            }
+        })
+            .then((response) => {
 
-        //         window.sessionStorage.clear()
+                window.sessionStorage.clear()
 
-        //         console.log("Order Id: " + response.data.orderId)
-        //         console.log("Time From Order: " + response.data.eta)
+                console.log("Order Id: " + response.data.orderId)
+                console.log("Time From Order: " + response.data.eta)
 
-        //         let eta = response.data.eta + 5;
+                let eta = response.data.eta + 5;
 
-        //         countDown.value = eta;
+                countDown.value = eta;
 
-        //         console.log("Estimated Time: " + eta)
+                console.log("Estimated Time: " + eta)
 
-        //         window.sessionStorage.setItem('order_id', response.data.orderId)
-        //         window.sessionStorage.setItem('eta', eta)
+                window.sessionStorage.setItem('order_id', response.data.orderId)
+                window.sessionStorage.setItem('eta', eta)
 
-        //         show.value = true;
-        //         countDownTimer();
-        //     })
+                show.value = true;
+                countDownTimer();
+            })
     }
 }
 </script>
@@ -430,17 +393,17 @@ function generate() {
 
 .nwchoosebx_radio-tile-group .form-select {
     background-color: #01413E;
-  border: 0;
-  font-size: 12px;
-  color: #fff;
-  padding: .375rem .75rem;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjUsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA4MDAgODAwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA4MDAgODAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNi40LDIxNS4xYzAtNi43LDIuNy0xMy42LDcuOC0xOC44YzEwLjMtMTAuMywyNy4yLTEwLjMsMzcuNSwwbDM1MywzNTNsMzQ3LjgtMzQ3LjgNCgljMTAuMy0xMC4zLDI3LjItMTAuMywzNy41LDBjMTAuMywxMC4zLDEwLjMsMjcuMiwwLDM3LjVMNDIzLjQsNjA1LjhjLTEwLjMsMTAuMy0yNy4yLDEwLjMtMzcuNSwwTDE0LjIsMjM0LjENCglDOC45LDIyOC43LDYuNCwyMjIuMSw2LjQsMjE1LjFMNi40LDIxNS4xeiIvPg0KPC9zdmc+DQo=');
-  background-repeat: no-repeat,repeat;
-  background-position: right 0.7em top 50%,0 0;
-  background-size: 1em auto,100%;
+    border: 0;
+    font-size: 12px;
+    color: #fff;
+    padding: .375rem .75rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjUsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA4MDAgODAwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA4MDAgODAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNi40LDIxNS4xYzAtNi43LDIuNy0xMy42LDcuOC0xOC44YzEwLjMtMTAuMywyNy4yLTEwLjMsMzcuNSwwbDM1MywzNTNsMzQ3LjgtMzQ3LjgNCgljMTAuMy0xMC4zLDI3LjItMTAuMywzNy41LDBjMTAuMywxMC4zLDEwLjMsMjcuMiwwLDM3LjVMNDIzLjQsNjA1LjhjLTEwLjMsMTAuMy0yNy4yLDEwLjMtMzcuNSwwTDE0LjIsMjM0LjENCglDOC45LDIyOC43LDYuNCwyMjIuMSw2LjQsMjE1LjFMNi40LDIxNS4xeiIvPg0KPC9zdmc+DQo=');
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 1em auto, 100%;
 }
 
 .nwchoosebx_radio-tile-group .input-container {
