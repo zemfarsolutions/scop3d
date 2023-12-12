@@ -3099,6 +3099,7 @@
    .bg_cube {
       position: relative;
    }
+
    /* .bg_cube:before {
       content: "";
       background: url(../images/square01.png) no-repeat top center;
@@ -3259,9 +3260,10 @@
    .ribon-text {
       font-size: 14px;
       color: #fff;
-      line-height: 2;
-      margin-left: 11px;
-      text-transform: capitalize
+      text-transform: capitalize;
+      display: flex;
+      align-items: center;
+      justify-content: center;
    }
 
    .ribon-overlay {
@@ -8466,4 +8468,46 @@
 
    label.room_style {
       font-size: 12px;
+   }
+
+   .generation--result {
+      gap: 10px;
+   }
+
+   .generation--result--img--block {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #01413e;
+      transition: 0.5s ease-in all;
+      position: relative;
+   }
+
+   .generation--result--img--block:hover .download--btns {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s linear;
+   }
+
+   .download--btns {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+      background: rgb(7 122 118 / 30%);
+      background-blend-mode: multiply;
+      backdrop-filter: blur(2px);
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s 0.3s, opacity 0.3s linear;
+   }
+
+   .download--btns img {
+      max-width: 40px;
+      width: 100%;
    }

@@ -1569,9 +1569,11 @@ section.estate-outer.price-guide {
 
 .filepond--item {
    width: calc(100% - 0.5em);
-   max-height: 500px !important;
+   /* max-height: 500px !important; */
    /* min-height: 450px !important;
    height: 500px; */
+   height: 100%;
+   min-height: 450px;
 }
 
 .filepond--drop-label {

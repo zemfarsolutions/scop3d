@@ -44,6 +44,12 @@
                         </template>
                         <template #fallback>
                             <div class="skeleton-loader">
+                                <div v-if="countDown > 0" class="d-flex justify-content-center lazy--load--spin">
+                                    <span class="ribon-text">
+                                        <div class="dot-spin"></div> <span class="d-none"> {{ countDown
+                                        }}</span>
+                                    </span>
+                                </div>
                                 <div class="wrapper">
                                     <div class="card">
                                         <div class="card__img skeleton"></div>
@@ -315,8 +321,8 @@ function generate() {
 } */
 
 .skeleton {
-    --bg: #e1e1e1;
-    --glare-bg: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.4), transparent);
+    --bg: #01413E;
+    --glare-bg: linear-gradient(90deg, transparent, #01413E, transparent);
     position: relative;
     background-color: var(--bg);
     overflow: hidden;
@@ -324,7 +330,7 @@ function generate() {
 
 .wrapper {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     justify-content: center;
     align-items: center
 }
@@ -333,6 +339,7 @@ function generate() {
     max-width: 1140px;
     width: 100%;
     margin: auto;
+    position: relative;
 }
 
 .skeleton::before {
@@ -360,6 +367,17 @@ function generate() {
  * Dot Spin
  * ==============================================
  */
+
+.lazy--load--spin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+}
+
 .dot-spin {
     position: relative;
     width: 10px;
@@ -410,6 +428,7 @@ function generate() {
 
 .card {
     --card-radius: 6px;
+    width: 50%;
     min-width: 300px;
     height: auto;
     box-shadow:
@@ -419,6 +438,7 @@ function generate() {
     background-color: white;
     border-radius: 12px;
     overflow: hidden;
+    opacity: 0.2;
 }
 
 .card__img {

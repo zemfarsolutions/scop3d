@@ -114,7 +114,7 @@
                                             data-bs-target="#pills-garden" type="button" role="tab"
                                             aria-controls="pills-garden" aria-selected="false"
                                             onclick="if (!window.__cfRLUnblockHandlers) return false; loadRenders(2)">
-                                            <img class="ai-icon" src="/assets/images/interior-icon.svg" alt=""
+                                            <img class="ai-icon" src="/assets/images/inactive-D2D.svg" alt=""
                                                 loading="lazy">
                                             <span class="nwtb-title">Day to Dusk</span>
                                         </button>
@@ -124,7 +124,7 @@
                                             data-bs-target="#pills-enhancement" type="button" role="tab"
                                             aria-controls="pills-enhancement" aria-selected="false"
                                             onclick="if (!window.__cfRLUnblockHandlers) return false; loadRenders(3)">
-                                            <img class="ai-icon" src="/assets/images/garden-icon.svg" alt="" loading="lazy">
+                                            <img class="ai-icon" src="/assets/images/inactive-IE.svg" alt="" loading="lazy">
                                             <span class="nwtb-title">Image Enhancement</span>
                                         </button>
                                     </li>
@@ -133,7 +133,7 @@
                                             data-bs-target="#pills-removal" type="button" role="tab"
                                             aria-controls="pills-removal" aria-selected="false"
                                             onclick="if (!window.__cfRLUnblockHandlers) return false; loadRenders(4)">
-                                            <img class="ai-icon" src="/assets/images/garden-icon.svg" alt="" loading="lazy">
+                                            <img class="ai-icon" src="/assets/images/inactive-IR.svg" alt="" loading="lazy">
                                             <span class="nwtb-title">Item Removal</span>
                                         </button>
                                     </li>
