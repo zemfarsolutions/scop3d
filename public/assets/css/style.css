@@ -8472,6 +8472,13 @@
 
    .generation--result {
       gap: 10px;
+      display: grid !important;
+      grid-template-columns: 50% 50%;
+   }
+
+   .generation--result :nth-child(3),
+   .generation--result :nth-child(4) {
+    display: none;
    }
 
    .generation--result--img--block {

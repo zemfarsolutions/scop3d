@@ -1,12 +1,12 @@
 <template>
-    <div class="d-flex justify-content-center generation--result">
+    <div class="generation--result">
         <div v-for="(img, index) in Images.generated_images" :key="index" class="generation--result--img--block">
-                <a :href="img.after_src" target="_blank" class="generation--result--img--link" download>
+            <a :href="img.after_src" target="_blank" class="generation--result--img--link" download>
                 <div class="download--btns">
                     <img src="/assets/images/download-minimalistic.svg" alt="download-btn">
                 </div>
-                    <img :src="img.after_src" alt="" class="generation--result--img">
-                </a>
+                <img :src="img.after_src" alt="" class="generation--result--img">
+            </a>
         </div>
     </div>
 </template>
@@ -25,23 +25,22 @@ const loadImages = async () => {
                 .then(function (response) {
 
                     console.log('Generated Images Here..')
-                    let obj = {
-                        "generated_images": [
-                            {
-                                "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
-                            },
-                            {
-                                "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
-                            },
-                            {
-                                "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
-                            }
-                        ]
-                    };
+                    // let obj = {
+                    //     "generated_images": [
+                    //         {
+                    //             "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
+                    //         },
+                    //         {
+                    //             "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
+                    //         },
+                    //         {
+                    //             "after_src": "https://foyr.com/learn/wp-content/uploads/2021/09/desk-for-master-bedroom-1024x683.jpg",
+                    //         }
+                    //     ]
+                    // };
 
                     resolve(
-                        // response.data
-                        obj
+                        response.data
                     )
                 })
 

@@ -127,7 +127,8 @@
                         </div>
                     </form>
                     <!-- <button class="nwfrm-submit _btn_gndeisgn" >Generate </button> -->
-                    <button class="btn generate-go" type="button" @click="generate()">Generate</button>
+                    <button :disabled="isDisabled" class="btn generate-go" type="button"
+                        @click="generate()">Generate</button>
                 </div>
             </div>
         </div>
@@ -212,6 +213,7 @@ const show = ref(false);
 const room_type = ref(null);
 const room_style = ref(null);
 const countDown = ref();
+const isDisabled = ref(false);
 
 const virtual_styles = [
     {
@@ -285,49 +287,51 @@ function generate() {
         });
     } else {
 
-        window.sessionStorage.clear()
-        let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
-        let eta = 10;
-        window.sessionStorage.setItem('order_id', order_id)
-        window.sessionStorage.setItem('eta', eta)
-        countDown.value = eta;
-        show.value = true;
+        // window.sessionStorage.clear()
+        // let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
+        // let eta = 10;
+        // window.sessionStorage.setItem('order_id', order_id)
+        // window.sessionStorage.setItem('eta', eta)
+        // countDown.value = eta;
+        // show.value = true;
 
-        countDownTimer();
+        // countDownTimer();
 
-        // let data = {
-        //     "imageId": selectedImage.value,
-        //     "type": room_type.value,
-        //     "style": room_style.value,
-        //     "serviceName": "VS",
-        //     "regenerate": false
-        // }
+        let data = {
+            "imageId": selectedImage.value,
+            "type": room_type.value,
+            "style": room_style.value,
+            "serviceName": "VS",
+            "regenerate": false
+        }
 
-        // axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
-        //     data, {
-        //     headers: {
-        //         'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
-        //     }
-        // })
-        //     .then((response) => {
+        axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
+            data, {
+            headers: {
+                'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
+            }
+        })
+            .then((response) => {
 
-        //         window.sessionStorage.clear()
+                window.sessionStorage.clear()
 
-        //         console.log("Order Id: " + response.data.orderId)
-        //         console.log("Time From Order: " + response.data.eta)
+                isDisabled.value = true;
 
-        //         let eta = response.data.eta + 5;
+                console.log("Order Id: " + response.data.orderId)
+                console.log("Time From Order: " + response.data.eta)
 
-        //         countDown.value = eta;
+                let eta = response.data.eta + 5;
 
-        //         console.log("Estimated Time: " + eta)
+                countDown.value = eta;
 
-        //         window.sessionStorage.setItem('order_id', response.data.orderId)
-        //         window.sessionStorage.setItem('eta', eta)
+                console.log("Estimated Time: " + eta)
 
-        //         show.value = true;
-        //         countDownTimer();
-        //     })
+                window.sessionStorage.setItem('order_id', response.data.orderId)
+                window.sessionStorage.setItem('eta', eta)
+
+                show.value = true;
+                countDownTimer();
+            })
     }
 }
 </script>

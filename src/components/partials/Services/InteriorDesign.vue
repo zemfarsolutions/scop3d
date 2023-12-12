@@ -31,13 +31,6 @@
 
                 <div class="mt-4" v-if="show">
 
-                    <div v-if="countDown > 0" class="d-flex justify-content-center">
-                        <span class="ribon-text">
-                            <div class="dot-spin"></div> <span class="d-none"> {{ countDown
-                            }}</span>
-                        </span>
-                    </div>
-
                     <Suspense>
                         <template #default>
                             <ViewImages />
@@ -146,7 +139,8 @@
                         </div>
                     </form>
                     <!-- <button class="nwfrm-submit _btn_gndeisgn" >Generate </button> -->
-                    <button class="btn generate-go" type="button" @click="generate()">Generate</button>
+                    <button :disabled="isDisabled" class="btn generate-go" type="button"
+                        @click="generate()">Generate</button>
                 </div>
             </div>
         </div>
@@ -233,6 +227,7 @@ const countDown = ref();
 const interior_type = ref("Bedroom");
 const interior_style = ref(null);
 const interior_color = ref("SnowWhite");
+const isDisabled = ref(false);
 
 const interior_types = [{
     name: "Bedroom"
@@ -366,6 +361,8 @@ function generate() {
             .then((response) => {
 
                 window.sessionStorage.clear()
+
+                isDisabled.value = true;
 
                 console.log("Order Id: " + response.data.orderId)
                 console.log("Time From Order: " + response.data.eta)
