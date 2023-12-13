@@ -286,7 +286,7 @@ function generate() {
             autoClose: 1000,
         });
     } else {
-
+        window.sessionStorage.clear()
         // window.sessionStorage.clear()
         // let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
         // let eta = 10;

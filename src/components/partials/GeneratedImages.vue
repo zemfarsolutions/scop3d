@@ -15,10 +15,12 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-let estimated_time = window.sessionStorage.getItem('eta') * 1000;
-let order_id = window.sessionStorage.getItem('order_id');
 
 const loadImages = async () => {
+
+    let estimated_time = window.sessionStorage.getItem('eta') * 1000;
+    let order_id = window.sessionStorage.getItem('order_id');
+
     return new Promise((resolve) => {
         setTimeout(() => {
             axios.get('https://api.scop3d.com/api/get-generated-image/' + order_id)
