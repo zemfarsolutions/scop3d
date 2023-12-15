@@ -28,6 +28,14 @@ import { RouterLink, RouterView } from 'vue-router';
                                 Start Now
                             </a>
                         </div>
+                        <div class="upgrade-subtn">
+                            <a class="upgd-go" href="#">
+                                Login/Register
+                            </a>
+                        </div>
+                        
+                        
+                        
                     </div>
                 </div>
             </div>
