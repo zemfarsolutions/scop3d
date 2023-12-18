@@ -128,7 +128,8 @@ const loginData = ref({
   password: '',
 });
 
-const isLoggedIn = ref(false); // Define isLoggedIn here
+const isLoggedIn = ref(localStorage.getItem('isLoggedIn') === 'true');
+const user = ref({}); // Initialize an empty user object
 
 onMounted(() => {
   modal_register.value = new bootstrap.Modal('#modal_register', {});
@@ -166,27 +167,90 @@ async function submitLogin() {
   try {
     const response = await axios.post('https://api.scop3d.com/api/login', loginData.value);
     console.log('API Response:', response.data);
+
     // Set login status to true
     isLoggedIn.value = true;
-    
+    localStorage.setItem('isLoggedIn', 'true');
+
+    // Store the token in localStorage
+    const token = response.data.token;
+    localStorage.setItem('token', token);
+
     // Navigate back to the same view
     closeLogin();
+  } catch (error) {
+      console.error('API Error:', error);
+  }
+}
+
+
+async function logout() {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    console.error('Token not found');
+    return;
+  }
+
+  try {
+    const response = await axios.get('https://api.scop3d.com/api/logout', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    console.log('API Response:', response.data);
+
+    // Clear the user's login state and information
+    isLoggedIn.value = false;
+    localStorage.setItem('isLoggedIn', 'false');
+    localStorage.removeItem('token'); // Remove the token from localStorage
+
   } catch (error) {
     console.error('API Error:', error);
   }
 }
 
-// async function logout() {
+
+// async function submitLogin() {
 //   try {
-//     const response = await axios.post('https://api.scop3d.com/api/logout', user.value);
+//     const response = await axios.post('https://api.scop3d.com/api/login', loginData.value);
 //     console.log('API Response:', response.data);
-//     // Set login status to false
-//     isLoggedIn.value = false;
-//     // Clear user information
-//     user.value = {};
+//     // Set login status to true
+//     isLoggedIn.value = true;
+//     localStorage.setItem('isLoggedIn', 'true');
+//     // Store user information
+//     user.value = response.data.user;
+//     // Navigate back to the same view
+//     closeLogin();
 //   } catch (error) {
 //     console.error('API Error:', error);
 //   }
 // }
+
+// async function logout() {
+//   const token = localStorage.getItem('token');
+//   if (!token) {
+//     console.error('Token not found');
+//     return;
+//   }
+
+//   try {
+//     const response = await axios.get('https://api.scop3d.com/api/logout', {}, {
+//       headers: {
+//         Authorization: `Bearer ${token}`
+//       }
+//     });
+//     console.log('API Response:', response.data);
+
+//     // Clear the user's login state and information
+//     isLoggedIn.value = false;
+//     localStorage.setItem('isLoggedIn', 'false');
+//     localStorage.removeItem('token'); // Remove the token from localStorage
+
+//   } catch (error) {
+//     console.error('API Error:', error);
+//   }
+// }
+   
 </script>
+
 
