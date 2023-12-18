@@ -2,8 +2,8 @@
     <Banner />
     <About />
     <AIServices />
-    <Packages />
     <ImageSlider />
+    <Packages />
     <Streamline />
     <Estate />
     <Reviews />
