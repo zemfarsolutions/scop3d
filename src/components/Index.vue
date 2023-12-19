@@ -3,6 +3,7 @@
     <About />
     <AIServices />
     <ImageSlider />
+    <Packages />
     <Streamline />
     <Estate />
     <Reviews />
@@ -11,6 +12,7 @@
 
 <script setup>
 // Partials
+import Packages from './partials/Packages.vue'
 import Banner from './partials/Banner.vue'
 import Competitive from './partials/Competitive.vue'
 import Reviews from './partials/Reviews.vue'

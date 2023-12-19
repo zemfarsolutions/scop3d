@@ -32,7 +32,7 @@
                     <h2><img src="/assets/images/stars.png" alt="">
                         <span>Star Rating </span>
                     </h2>
-                    <p>Scop3D AI has a 5 star rating from our members that use it everyday.</p>
+                    <p>Scop3D AI has a 5 star rating from our members that use it everyday. </p>
                 </li>
             </ul>
         </div>

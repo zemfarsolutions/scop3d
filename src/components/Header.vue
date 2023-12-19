@@ -1,14 +1,14 @@
 <template>
-    <header>
-        <div class="hmd-outer">
-            <div class="container">
-                <div class="hmd-inner">
-                    <div class="hmd-logo">
-                        <RouterLink to="/"><img src="/assets/images/Bryan_logo.png" alt="Scop3D AI logo" style="width: 70%;">
-                        </RouterLink>
-                    </div>
-                    <div class="hmd-navflx">
-                        <!-- <div class="hmd-nav">
+  <header>
+    <div class="hmd-outer">
+      <div class="container">
+        <div class="hmd-inner">
+          <div class="hmd-logo">
+            <RouterLink to="/"><img src="/assets/images/Bryan_logo.png" alt="Scop3D AI logo" style="width: 70%;">
+            </RouterLink>
+          </div>
+          <div class="hmd-navflx">
+            <!-- <div class="hmd-nav">
                                         <ul>
                                             <li class="hmd-navlist"><a href="#about-us">About Us</a></li>
                                             <li class="hmd-navlist"><a href="#our-work">Our Work</a></li>
@@ -16,94 +16,98 @@
                                             <li class="hmd-navlist"><a href="#footer">Contact us</a></li>
                                         </ul>
                                     </div> -->
-                        <div class="upgrade-subtn">
-                            <a class="upgd-go" href="#">
-                                                    <img class="strlight" src="/assets/images/light.svg" loading="lazy"
-                                                        alt="button light version upgrade homedesigns">
-                                                    Start Now
-                                                </a>
-                        </div>
-                        <div class="upgrade-subtn">
-                            <template v-if="isLoggedIn">
-                                <a class="upgd-go" href="javascript:void(0);" @click="logout">
-                                    Logout
-                                </a>
-                            </template>
-                            <template v-else>
-                                <a class="upgd-go" href="javascript:void(0);" @click="registerModal">
-                                    Register
-                                </a>
-                                <a class="upgd-go" href="javascript:void(0);" @click="loginModal">
-                                    Login
-                                </a>
-                            </template>
-                        </div>
-    
-                    </div>
-                </div>
+            <div class="upgrade-subtn">
+              <a class="upgd-go" href="#">
+                <img class="strlight" src="/assets/images/light.svg" loading="lazy"
+                  alt="button light version upgrade homedesigns">
+                Start Now
+              </a>
             </div>
-        </div>
-    </header>
+            <div class="upgrade-subtn">
+              <template v-if="isLoggedIn">
+                <a class="upgd-go" href="javascript:void(0);" @click="logout">
+                  Logout
+                </a>
+              </template>
+              <template v-else>
+                <a class="upgd-go" href="javascript:void(0);" @click="registerModal">
+                  Register
+                </a>
+                <a class="upgd-go" href="javascript:void(0);" @click="loginModal">
+                  Login
+                </a>
+              </template>
+            </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="modal_register" tabindex="-1" aria-labelledby="modal_register_label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="modal_demo_label">Register</h5>
-                <button type="button" class="btn-close" aria-label="Close" @click="closeRegister"></button>
-                </div>
-                <div class="modal-body">
-                <div class="formSec">
-                    <form @submit.prevent="submitRegister">
-                    <div class="form-group my-3">
-                        <input v-model="registerData.name" type="text" name="name" class="form-control" placeholder="Enter Username..." style="border-radius: 20px;">
-                    </div>
-                    <div class="form-group my-3">
-                        <input v-model="registerData.email" type="email" name="email" class="form-control" placeholder="Enter email..." style="border-radius: 20px;">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input v-model="registerData.password" type="password" name="password" class="form-control" placeholder="Enter password..." style="border-radius: 20px;">
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between">
-                        <button type="button" class="btn btn-secondary" @click="closeRegister">Close</button>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </div>
-                    </form>
-                </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </header>
 
-    <!--login modal -->
-    <div class="modal fade" id="modal_login" tabindex="-1" aria-labelledby="modal_login_label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modal_demo_label">Login</h5>
-                <button type="button" class="btn-close" aria-label="Close" @click="closeLogin"></button>
-            </div>
-            <div class="modal-body">
-                <div class="formSec">
-                    <form @submit.prevent="submitLogin">
-                        <div class="form-group my-3">
-                            <input v-model="loginData.email" type="email" name="email" class="form-control" placeholder="Enter email..." style="border-radius: 20px;">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input v-model="loginData.password" type="password" name="password" class="form-control" placeholder="Enter password..." style="border-radius: 20px;">
-                        </div>
-                        <div class="modal-footer d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary" @click="closeLogin">Close</button>
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            </div>
+  <!-- Modal -->
+  <div class="modal fade" id="modal_register" tabindex="-1" aria-labelledby="modal_register_label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal_demo_label">Register</h5>
+          <button type="button" class="btn-close" aria-label="Close" @click="closeRegister"></button>
         </div>
+        <div class="modal-body">
+          <div class="formSec">
+            <form @submit.prevent="submitRegister">
+              <div class="form-group my-3">
+                <input v-model="registerData.name" type="text" name="name" class="form-control"
+                  placeholder="Enter Username..." style="border-radius: 20px;">
+              </div>
+              <div class="form-group my-3">
+                <input v-model="registerData.email" type="email" name="email" class="form-control"
+                  placeholder="Enter email..." style="border-radius: 20px;">
+              </div>
+              <div class="form-group mb-3">
+                <input v-model="registerData.password" type="password" name="password" class="form-control"
+                  placeholder="Enter password..." style="border-radius: 20px;">
+              </div>
+              <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" @click="closeRegister">Close</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
+  <!--login modal -->
+  <div class="modal fade" id="modal_login" tabindex="-1" aria-labelledby="modal_login_label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal_demo_label">Login</h5>
+          <button type="button" class="btn-close" aria-label="Close" @click="closeLogin"></button>
+        </div>
+        <div class="modal-body">
+          <div class="formSec">
+            <form @submit.prevent="submitLogin">
+              <div class="form-group my-3">
+                <input v-model="loginData.email" type="email" name="email" class="form-control"
+                  placeholder="Enter email..." style="border-radius: 20px;">
+              </div>
+              <div class="form-group mb-3">
+                <input v-model="loginData.password" type="password" name="password" class="form-control"
+                  placeholder="Enter password..." style="border-radius: 20px;">
+              </div>
+              <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" @click="closeLogin">Close</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -153,22 +157,8 @@ async function submitRegister() {
   try {
     const response = await axios.post('https://api.scop3d.com/api/register', registerData.value);
     console.log('API Response:', response.data);
-
-    // Check if the registration was successful
-    if (response.data.success) {
-      // Save the authentication token to local storage
-      const token = response.data.token;
-      localStorage.setItem('token', token);
-
-      // Set the user as logged in
-      isLoggedIn.value = true;
-      localStorage.setItem('isLoggedIn', 'true');
-
-      // Navigate back to the same view
-      closeRegister();
-    } else {
-      console.error('Registration failed:', response.data.message);
-    }
+    // Navigate back to the same view
+    closeRegister();
   } catch (error) {
     console.error('API Error:', error);
   }
@@ -179,26 +169,20 @@ async function submitLogin() {
     const response = await axios.post('https://api.scop3d.com/api/login', loginData.value);
     console.log('API Response:', response.data);
 
-    // Check if the login was successful
-    if (response.data.message !== 'User Logged In Successfully') {
-      console.error('Login failed:', response.data.message);
-    } else {
-      // Save the authentication token to local storage
-      const token = response.data.token;
-      localStorage.setItem('token', token);
+    // Set login status to true
+    isLoggedIn.value = true;
+    localStorage.setItem('isLoggedIn', 'true');
 
-      // Set the user as logged in
-      isLoggedIn.value = true;
-      localStorage.setItem('isLoggedIn', 'true');
-      
-      // Navigate back to the same view
-      closeLogin();
-    }
+    // Store the token in localStorage
+    const token = response.data.token;
+    localStorage.setItem('token', token);
+
+    // Navigate back to the same view
+    closeLogin();
   } catch (error) {
     console.error('API Error:', error);
   }
 }
-
 
 
 async function logout() {
@@ -267,7 +251,6 @@ async function logout() {
 //     console.error('API Error:', error);
 //   }
 // }
-   
 </script>
 
 
