@@ -14,7 +14,7 @@
                             <span class="fa">
                                 <img src="/assets/images/dollar-sign-circle.svg" alt="">
                             </span>
-                            <h2>Free</h2>
+                            <h2>Free</h2> <span style="opacity: 0;"> / Month </span>
                         </div>
                         <div class="price">
                             <h4>Sign up</h4>
@@ -36,7 +36,7 @@
                             <h2>Core</h2>
                         </div>
                         <div class="price">
-                            <h4><sup>$</sup>9</h4>
+                            <h4><sup>$</sup>9</h4>/ Month
                         </div>
                         <div class="option">
                             <ul>
@@ -55,7 +55,7 @@
                             <h2>Premium</h2>
                         </div>
                         <div class="price">
-                            <h4><sup>$</sup>24</h4>
+                            <h4><sup>$</sup>24</h4>/ Month
                         </div>
                         <div class="option">
                             <ul>
@@ -74,7 +74,7 @@
                             <h2>Deluxe</h2>
                         </div>
                         <div class="price">
-                            <h4><sup>$</sup>49</h4>
+                            <h4><sup>$</sup>49</h4>/ Month
                         </div>
                         <div class="option">
                             <ul>
