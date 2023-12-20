@@ -8,7 +8,7 @@
                     </div>
                     <hr>
                 </div>
-                <div class="col-sm-3">
+                <!-- <div class="col-sm-3">
                     <div class="cardy text-center">
                         <div class="title">
                             <span class="fa">
@@ -26,27 +26,9 @@
                         </div>
                         <a href="https://buy.stripe.com/test_bIY6qM1tq8rng48002" target="_blank">Order Now</a>
                     </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="cardy text-center">
-                        <div class="title">
-                            <span class="fa">
-                                <img src="/assets/images/dollar-sign-circle.svg" alt="">
-                            </span>
-                            <h2>Core</h2>
-                        </div>
-                        <div class="price">
-                            <h4><sup>$</sup>9</h4>/ Month
-                        </div>
-                        <div class="option">
-                            <ul>
-                                <li>Up to 20 generations</li>
-                            </ul>
-                        </div>
-                        <a href="https://buy.stripe.com/test_5kA02o1tqePL4lq9AD" target="_blank">Order Now</a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
+                </div> -->
+
+                <!-- <div class="col-sm-3">
                     <div class="cardy text-center">
                         <div class="title">
                             <span class="fa">
@@ -83,12 +65,53 @@
                         </div>
                         <a href="https://buy.stripe.com/test_eVa9CY1tq7nj8BG148" target="_blank">Order Now</a>
                     </div>
+                </div> -->
+
+                <div class="col-sm-3" v-for="(pkg, index) in packages" :key="index">
+                    <payment-component :package="pkg" @payment-success="handlePaymentSuccess"></payment-component>
                 </div>
             </div>
         </div>
     </section>
 </template>
-<style>
+
+<script>
+// import PaymentComponent from "@/components/PaymentComponent.vue";
+import PaymentComponent from './PaymentComponent.vue'
+
+export default {
+    components: {
+        PaymentComponent,
+    },
+    data() {
+        return {
+            packages: [
+                { name: "Free", amount: 0, generations: 6 },
+                { name: "Core", amount: 9, generations: 20 },
+                { name: "Premium", amount: 24, generations: 60 },
+                { name: "Deluxe", amount: 49, generations: 150 },
+            ],
+        };
+    },
+    methods: {
+        handlePaymentSuccess(data) {
+            // Handle the payment success event here
+            console.log("Payment success for package:", data.package);
+            console.log("Payment token:", data.token);
+            // You can perform additional actions based on the successful payment
+        },
+        initiatePurchase(pkg) {
+            // You can add logic here to customize the purchase process
+            console.log(`Initiating purchase for ${pkg.name} package`);
+            // For example, you might want to show a loading spinner or do some other UI updates
+            // Then, you can programmatically click the Stripe Checkout button
+            this.$refs[`${pkg.name.toLowerCase()}-checkout`].$el.click();
+        },
+    },
+};
+</script>
+
+<!-- <style>
 .cardy {
     position: relative;
     max-width: 300px;
@@ -234,4 +257,4 @@
 .cardy a:hover {
     text-decoration: none;
 }
-</style>
+</style> -->

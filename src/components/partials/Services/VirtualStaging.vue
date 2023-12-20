@@ -126,7 +126,6 @@
                             </div>
                         </div>
                     </form>
-                    <!-- <button class="nwfrm-submit _btn_gndeisgn" >Generate </button> -->
                     <button :disabled="isDisabled" class="btn generate-go" type="button"
                         @click="generate()">Generate</button>
                 </div>
@@ -141,7 +140,6 @@ import vueFilePond from "vue-filepond";
 
 // Import FilePond styles
 import "filepond/dist/filepond.min.css";
-
 // Import FilePond plugins
 // Please note that you need to install these plugins separately
 
@@ -204,6 +202,7 @@ import { ref } from 'vue';
 import { defineAsyncComponent } from 'vue';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
+
 
 const ViewImages = defineAsyncComponent({
     loader: () => import('./../GeneratedImages.vue')
@@ -271,67 +270,66 @@ function countDownTimer() {
     }
 }
 
+// Change the import statement
+import { computed } from 'vue';
+import * as Header from '@/components/Header.vue';
+
+const isLoggedIn = computed(() => Header.isLoggedIn);
+const { loginModal } = Header;
+
 function generate() {
+    if (isLoggedIn.value) {
+        // Your existing logic for generating
+        console.log(selectedImage.value);
+        console.log(room_style.value);
+        console.log(room_type.value);
 
-    console.log(selectedImage.value)
-    console.log(room_style.value)
-    console.log(room_type.value)
+        if (room_style.value == null || room_type.value == null) {
+            toast("Please, Room Style and Type.", {
+                autoClose: 1000,
+            });
+        } else if (selectedImage.value == null) {
+            toast("Please, Select an Image.", {
+                autoClose: 1000,
+            });
+        } else {
+            window.sessionStorage.clear();
 
-    if (room_style.value == null || room_type.value == null) {
-        toast("Please, Room Style and Type.", {
-            autoClose: 1000,
-        });
-    } else if (selectedImage.value == null) {
-        toast("Please, Select an Image.", {
-            autoClose: 1000,
-        });
-    } else {
-        window.sessionStorage.clear()
-        // window.sessionStorage.clear()
-        // let order_id = "9a02b05e-d8f5-4ac7-bc44-8be258e3a18c";
-        // let eta = 10;
-        // window.sessionStorage.setItem('order_id', order_id)
-        // window.sessionStorage.setItem('eta', eta)
-        // countDown.value = eta;
-        // show.value = true;
+            let data = {
+                imageId: selectedImage.value,
+                type: room_type.value,
+                style: room_style.value,
+                serviceName: "VS",
+                regenerate: false,
+            };
 
-        // countDownTimer();
+            axios
+                .post("https://api.aihomedesign.com/api/v1/ai/order/submit", data, {
+                    headers: {
+                        'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41',
+                    },
+                })
+                .then((response) => {
+                    window.sessionStorage.clear();
+                    isDisabled.value = true;
 
-        let data = {
-            "imageId": selectedImage.value,
-            "type": room_type.value,
-            "style": room_style.value,
-            "serviceName": "VS",
-            "regenerate": false
+                    console.log("Order Id: " + response.data.orderId);
+                    console.log("Time From Order: " + response.data.eta);
+
+                    let eta = response.data.eta + 5;
+                    countDown.value = eta;
+
+                    console.log("Estimated Time: " + eta);
+
+                    window.sessionStorage.setItem('order_id', response.data.orderId);
+                    window.sessionStorage.setItem('eta', eta);
+
+                    show.value = true;
+                    countDownTimer();
+                });
         }
-
-        axios.post('https://api.aihomedesign.com/api/v1/ai/order/submit',
-            data, {
-            headers: {
-                'x-api-key': '507bf032a1592c29968f2309812886b21a090639b13ca2a6b349de7f260c8e41'
-            }
-        })
-            .then((response) => {
-
-                window.sessionStorage.clear()
-
-                isDisabled.value = true;
-
-                console.log("Order Id: " + response.data.orderId)
-                console.log("Time From Order: " + response.data.eta)
-
-                let eta = response.data.eta + 5;
-
-                countDown.value = eta;
-
-                console.log("Estimated Time: " + eta)
-
-                window.sessionStorage.setItem('order_id', response.data.orderId)
-                window.sessionStorage.setItem('eta', eta)
-
-                show.value = true;
-                countDownTimer();
-            })
+    } else {
+        loginModal();
     }
 }
 </script>
