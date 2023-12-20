@@ -43,7 +43,7 @@
                                 <li>Up to 20 generations</li>
                             </ul>
                         </div>
-                        <a href="https://buy.stripe.com/test_5kA02o1tqePL4lq9AD" target="_blank">Order Now</a>
+                        <a href="#" v-on:click="redirect('price_1OPVUlFIdC5dQCJqj0ne0XDS')">Order Now</a>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -62,7 +62,7 @@
                                 <li>Up to 60 generations</li>
                             </ul>
                         </div>
-                        <a href="https://buy.stripe.com/test_eVa9CY1tq7nj8BG148" target="_blank">Order Now</a>
+                        <a href="#" v-on:click="redirect('price_1OPW9NFIdC5dQCJqPqdX8RSp')">Order Now</a>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -81,13 +81,46 @@
                                 <li>Up to 150 generations</li>
                             </ul>
                         </div>
-                        <a href="https://buy.stripe.com/test_eVa9CY1tq7nj8BG148" target="_blank">Order Now</a>
+                        <a href="#" v-on:click="redirect('price_1OPWAPFIdC5dQCJqMgBsCPPz')">Order Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </template>
+
+<script>
+import { loadStripe } from "@stripe/stripe-js";
+import { onMounted } from "vue";
+
+export default {
+  setup() {
+    let stripe = null;
+    
+    onMounted(async () => {
+        stripe = await loadStripe(import.meta.env.VITE_STRIPE_KEY);
+    });
+
+    
+
+    function redirect(pricekey) {
+      stripe.redirectToCheckout({
+        successUrl: "http://localhost:5173/success",
+        cancelUrl: "http://localhost:5173",
+        lineItems: [
+          {
+            price: pricekey,
+            quantity: 1
+          }
+        ],
+        mode: "subscription"
+      });
+    }
+    return { redirect };
+  }
+};
+</script>
+
 <style>
 .cardy {
     position: relative;
